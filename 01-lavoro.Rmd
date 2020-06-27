@@ -4,7 +4,7 @@
 
 ## Primi prototipi {#prototipi}
 
-Dopola visione del [video sopracitato](https://www.youtube.com/watch?v=r6sGWTCMz2k) nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in _Javascript_ seguendo [alcuni tutorial](https://www.youtube.com/watch?v=MY4luNgGfms) di [_The Coding Train_](https://www.youtube.com/thecodingtrain). A dicembre dello stesso anno ho poi riscritto il precedente prototipo in _Java_ e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e la loro implementazione.
+Dopola visione del [video sopracitato](https://www.youtube.com/watch?v=r6sGWTCMz2k) nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in _JavaScript_ seguendo [alcuni tutorial](https://www.youtube.com/watch?v=MY4luNgGfms) di [_The Coding Train_](https://www.youtube.com/thecodingtrain). A dicembre dello stesso anno ho poi riscritto il precedente prototipo in _Java_ e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e con la loro implementazione.
 
 <br>
 
@@ -20,18 +20,18 @@ dove $c_n \in \mathbb{C}$ e $n \in \mathbb{Z}$, sotto _minime ipotesi_ sulla fun
 
 Inoltre, durante lo sviluppo del software, si è rivelato utile affrontare il tema delle curve di Bèzier, in particolare delle _polybézier_ - ovvero di una curva di Bèzier continua definita a tratti. Per potenziare le mie conoscenze in materia, ho fatto uso del libro _A Primer on Bézier Curves_, [disponibile online](https://pomax.github.io/bezierinfo/), che mi ha fornito le basi necessarie per manipolare tali oggetti da un punto di vista informatico.
 
-Prima della fase di programmazione si è poi resa necessaria una ricerca degli strumenti informatici più adatti. Una discussione degli strumenti adottati e del loro impiego è consultabile al capitolo dedicato...
+Prima della fase di programmazione si è poi resa necessaria una ricerca degli strumenti informatici più adatti. Una discussione degli strumenti adottati e del loro impiego è consultabile al [capitolo dedicato](#software).
 
 <br>
 
 ## Animazioni {#animazioni}
 
 Terminata la raccolta e lo studio delle informazioni necessarie, ha potuto avere inizio la programmazione delle animazioni in maniera più accurata rispetto ai [primi prototipi](#prototipi).
-Il loro sviluppo è avvenuto in _JavaScript_, facendo ampio uso delle librerie _open source_ [_p5.js_](https://p5js.org/), per il _creative coding_, e _complex.js_, per la gestione dei numeri complessi. Ciò ha permesso, a differenza di un video, di rendere le animazioni **interattive**, andando così a potenziare il legame con lo spettatore che si trasforma quindi in utente attivo.
+Il loro sviluppo è avvenuto in _JavaScript_, facendo ampio uso delle librerie _open source_ [_p5.js_](https://p5js.org/), per il _creative coding_, e [_complex.js_](https://github.com/infusion/Complex.js/), per la gestione dei numeri complessi. Ciò ha permesso, a differenza di un semplice video, di rendere le animazioni **interattive**, andando così a potenziare il legame con lo spettatore che si trasforma quindi in **utente attivo**.
 
 L'obiettivo delle animazioni è quello di agevolare la comprensione dei concetti teorici tramite una loro **visualizzazione immediata** e metterne in evidenza le sfaccettature più nascoste, andando ad affiancare ed assistere l'ingegno e le capacità immaginative dei loro fruitori.
 
-Molta attenzione è stata riposta nella loro **estetica**, dacché ritengo che l'aspetto artistico non sia affatto secondario al contenuto, ma piuttosto funzionale a quest'ultimo, poiché in grado di avvicinare e coinvolgere lo spettatore-utente instaurando una connessione emotiva e sensoriale più forte.<br>
+Molta attenzione è stata riposta nella loro **estetica**, in quanto ritengo che l'aspetto artistico non sia affatto secondario al contenuto, ma piuttosto funzionale a quest'ultimo, poiché in grado di avvicinare e coinvolgere lo spettatore-utente instaurando una connessione emotiva e sensoriale più forte.<br>
 La filosofia alla base di questo approccio deriva sicuramente dalla visione artistica del [video originale](https://www.youtube.com/watch?v=r6sGWTCMz2k). Tuttavia, è stata ampiamente influenzata anche dagli _Elementi_ di Euclide a colori, ovvero un'edizione del celebre libro di geometria in cui simboli e figure colorate sostituiscono le lettere, e dal pensiero del suo autore, Oliver Byrne, che ho avuto modo di apprezzare durante il corso di _Storia della Matematica Antica e Moderna_.<br>
 
 Ho infine curato l'**accessibilità**, ovvero la facilità di utilizzo, e la **portabilità**, cioè la corretta visualizzazione e fruizione su diversi tipi di dispositivi, principi chiavi per garantire all'utente un'esperienza fluida e priva di ostacoli o barriere di carattere tecnico.

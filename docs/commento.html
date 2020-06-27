@@ -201,23 +201,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dove <span class="math inline">\(a,t \in \mathbb{R}, \ c_n \in \mathbb{C}\)</span>. <span class="math inline">\(p(t)\)</span> ha periodo <span class="math inline">\(a\)</span> e grado minore o uguale a <span class="math inline">\(N\)</span>.</p>
 <p>Seguono immediatamente <strong>due animazioni</strong> per visualizzare un polinomio trigonometrico.</p>
 <ul>
-<li>Nella <a href="https://bradwave.github.io/thesis/animations/s2-animation.html">prima</a> è possibile - tramite <em>rotella del mouse</em> o <em>trascinamento verticale</em> - <strong>costruire progressivamente</strong> un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.<br>
+<li>Nella <a href="https://bradwave.github.io/thesis/animations/s2-animation.html">prima</a> è possibile - tramite <em>rotella del mouse</em> o <em>trascinamento verticale</em> su schermo - <strong>costruire progressivamente</strong> un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.<br>
 Il primo elemento visibile è il coefficiente <span class="math inline">\(c_0\)</span>, ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso <span class="math inline">\(c_n\)</span> moltiplicato per <span class="math inline">\(e_n(t)=e^{2\pi in\frac{t}{a}}\)</span> ovvero la curva chiusa complessa con supporto la <em>circonferenza unitaria</em>, percorsa con frequenza <span class="math inline">\(n\)</span>. Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, <span class="math inline">\(c_n \cdot e_n(t)\)</span> rappresenta la curva chiusa con supporto una circonferenza di <em>raggio</em> <span class="math inline">\(|c_n|\)</span> e una <em>fase</em> <span class="math inline">\(arg(c_n)=\theta_n\)</span> ( dove <span class="math inline">\(c_n=r_{n}e^{i\theta_n}\)</span>) rispetto alla curva <span class="math inline">\(|c_n| \cdot e_n(t)\)</span>.<br>
 Le varie componenti del tipo <span class="math inline">\(c_n \cdot e_n(t)\)</span> possono essere sommate con la definizione usuale di somma in campo complesso, ottenendo una curva che rappresenta proprio il polinomio trigonometrico.</li>
 </ul>
 <p><img src="_images/pol-trig.png" width="80%" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Nella <a href="https://bradwave.github.io/thesis/animations/s3-animation.html">seconda animazione</a> è possibile - sempre tramite <em>rotella del mouse</em> o <em>trascinamento verticale</em> - rivelare l’asse della variabile <span class="math inline">\(t\)</span> per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio <span class="math inline">\(\mathbb{R} \times \mathbb{C}\)</span>.</li>
+<li>Nella <a href="https://bradwave.github.io/thesis/animations/s3-animation.html">seconda animazione</a> è possibile - sempre tramite <em>rotella del mouse</em> o <em>trascinamento verticale</em> su schermo - rivelare l’asse della variabile <span class="math inline">\(t\)</span> per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio <span class="math inline">\(\mathbb{R} \times \mathbb{C}\)</span>.</li>
 </ul>
 <p><img src="_images/pol-3d.png" width="50%" style="display: block; margin: auto;" /></p>
-<p>Introduciamo quindi <span class="math inline">\(T_n\)</span>, spazio vettoriale dei polinomi trigonometrici <span class="math inline">\(p(t)\)</span> di grado minore o uguale a <span class="math inline">\(N\)</span>, dotato del prodotto scalare
+<p>Introduciamo quindi <span class="math inline">\(T_n\)</span>, spazio vettoriale (di dimensione <span class="math inline">\(2N-1\)</span>) dei polinomi trigonometrici <span class="math inline">\(p(t)\)</span> di grado minore o uguale a <span class="math inline">\(N\)</span>, dotato del prodotto scalare
 <span class="math display">\[(p,q) = \int_{0}^{a} p(t) \overline{q}(t)dt \ .\]</span>
-Da <span class="math inline">\((p,n)=ac_n\)</span> ricaviamo quindi la <em><strong>formula di Fourier</strong></em></p>
+Da <span class="math inline">\((p,n)=a\cdot c_n\)</span> ricaviamo quindi la <em><strong>formula di Fourier</strong></em></p>
 <p><span class="math display" id="eq:formulafourier">\[\begin{equation}
   c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
   \tag{2.2}
 \end{equation}\]</span></p>
-<p>Si pone quindi la <strong>domanda fondamentale</strong>:</p>
+<p>Ci poniamo dunque la <strong>domanda fondamentale</strong>:</p>
 <blockquote>
 <p><i>se <span class="math inline">\(f: \mathbb{R} \longrightarrow \mathbb{C} \ \)</span> è una funzione arbitraria di periodo <span class="math inline">\(a\)</span>, possiamo trovare una decomposizione di <span class="math inline">\(f\)</span> della forma</i>
 <span class="math display" id="eq:domanda">\[\begin{equation}
@@ -229,14 +229,14 @@ f(t) = \sum c_n e^{2i \pi n\textstyle \frac{t}{a}} \ ,
 </div>
 <div id="seriefourier" class="section level2">
 <h2><span class="header-section-number">2.2</span> Segnali periodici e serie di Fourier</h2>
-<p>In un celebre articolo del 1807, <strong>Joseph Fourier</strong> afferma che la risposta a tale domanda sia affermativa, a patto siano consentite somme infinite.</p>
+<p>In un celebre articolo del 1807, <strong>Joseph Fourier</strong> afferma che la risposta a tale domanda è affermativa, a patto che siano consentite somme infinite.</p>
 <p>È possibile ridefinire questa risposta con gli strumenti della matematica moderna.<br>
-Per farlo introduciamo lo spazio
+Per farlo, introduciamo lo spazio
 <span class="math display">\[L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt &lt; -\infty\bigg\}\]</span></p>
 <p>che, dotato delle usuali operazioni, è uno <strong>spazio vettoriale</strong>. Definiamo quindi il <em>prodotto scalare</em>
 <span class="math display">\[(f,g) = \int_{0}^{a} f(t) \overline{g}(t)dt \ ,\]</span></p>
 <p>e la <em>norma</em> associata
-<span class="math display">\[ \Vert f \Vert_2 = \left( \int_{0}^{a} |f(t)|^2 dt \right) ^{\textstyle \frac{1}{2}}\]</span>
+<span class="math display">\[ \Vert f \Vert_2 = \left( \int_{0}^{a} |f(t)|^2 dt \right) ^{\textstyle \frac{1}{2}} \ .\]</span>
 Per rispondere alla <em>domanda fondamentale</em> occorre trovare l’elemento <span class="math inline">\(f_N\)</span> nel sottospazio <span class="math inline">\(T_n\)</span> di <span class="math inline">\(L_{p}^{2}(0,a)\)</span> che ha la minima distanza da <span class="math inline">\(f\)</span>. Se esiste, lo chiamiamo la <em><strong>miglior approssimazione</strong></em> di <span class="math inline">\(f\)</span> in <span class="math inline">\(T_{n}\)</span>.<br>
 La soluzione è fornita dal seguente teorema:</p>
 <blockquote>
@@ -256,14 +256,14 @@ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
 </blockquote>
 <p><br></p>
 <p>Il passaggio successivo consiste nello studio della <strong>convergenza</strong>.<br>
-Grazie ad un <a href="https://bradwave.github.io/thesis/animations/s4-animation.html"><strong>esempio animato</strong></a>, è possibile osservare come l’approssimazione, data da una somma di seni, tenda a alla funzione <em>onda quadra</em>:</p>
+Grazie ad un <a href="https://bradwave.github.io/thesis/animations/s4-animation.html"><strong>esempio animato</strong></a>, è possibile osservare come l’approssimazione, data da una somma di seni, tenda alla funzione <em>onda quadra</em>:</p>
 <ul>
 <li>è possibile - tramite <em>rotella del mouse</em> o <em>trascinamento verticale</em> - aumentare in numero di addendi nella somma e, quindi, migliorare l’approssimazione.</li>
 </ul>
-<p><img src="_images/appr.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><img src="_images/approx.png" width="50%" style="display: block; margin: auto;" /></p>
 <p>In conclusione, è possibile scrivere:
 <span class="math display">\[ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .\]</span>
-Si noti che questa è un’equivalenza nella norma di <span class="math inline">\(L_{p}^{2}(0,a)\)</span> e <strong>non</strong> significa che, per qualunque valore di <span class="math inline">\(t\)</span>, il <span class="math inline">\(f(t)\)</span> sia uguale alla somma della serie.</p>
+Si noti che questa è un’equivalenza nella norma di <span class="math inline">\(L_{p}^{2}(0,a)\)</span> e <strong>non</strong> significa che, per qualunque valore di <span class="math inline">\(t\)</span>, <span class="math inline">\(f(t)\)</span> sia uguale alla somma della serie.</p>
 </div>
 <div id="rapprpunt" class="section level2">
 <h2><span class="header-section-number">2.3</span> Rappresentazione puntuale</h2>

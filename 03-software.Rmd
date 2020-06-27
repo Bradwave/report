@@ -1,6 +1,6 @@
 # Software {#software}
 
-Questo capitolo sarà dedicato ad una discussione dettagliata di alcune delle più interessanti tecniche informatiche e dei programmi impiegati nella la realizzazione della presentazione e delle animazioni.
+Questo capitolo è dedicato ad una discussione dettagliata di alcune delle più interessanti tecniche informatiche e dei programmi impiegati nella realizzazione della presentazione e delle animazioni.
 
 Il **codice** è interamente disponibile su [_**GitHub**_](https://github.com/Bradwave/thesis).
 
@@ -22,7 +22,7 @@ Data la peculiarità del **sistema di coordinate a schermo** utilizzato da _p5.j
 knitr::include_graphics(rep('_images/screen.png'))
 ```
 
-Le funzione _toCartesian_ - responsabile della conversione da coordiate a schermo a coordinate cartesiane - tiene conto della dimensione della finestra, informazione contenuta in _descaleFactor_, e della posizione del centro della finestra:
+La funzione _toCartesian_ - responsabile della conversione da coordiate a schermo a coordinate cartesiane - tiene conto della dimensione della finestra, informazione contenuta in _descaleFactor_, e della posizione del centro della finestra:
 
 ```javascript
 function toCartesian(x, y) {
@@ -46,7 +46,7 @@ function toScreenCoord(x, y) {
 
 ### Barra del progresso {#progrbar}
 
-La [**barra del progresso**](https://github.com/Bradwave/thesis/blob/master/animations/js/utils/progressGraphics.js) (o _progress bar_) è un'importante strumento di **accessibilità** e restituisce un _feedback_ in merito al progresso possibile nell'interazione da parte dell'utente con l'animazione. La barra è posizionata sul lato destro dello schermo e monitora il comportamento dell'utente, attivandosi solo durante un interazione e scomparendo dopo qualche secondo, per non interferire con il resto dell'animazione.
+La [**barra del progresso**](https://github.com/Bradwave/thesis/blob/master/animations/js/utils/progressGraphics.js) (o _progress bar_) è un importante strumento di **accessibilità** e restituisce un _feedback_ in merito al progresso possibile nell'interazione da parte dell'utente con l'animazione. La barra è posizionata sul lato destro dello schermo e monitora il comportamento dell'utente, attivandosi solo durante un'interazione e scomparendo dopo qualche secondo, per non interferire con il resto dell'animazione.
 
 È inoltre accompagnata da un'**icona** di un **mouse**, da me disegnata, che comunica all'utente, con delle apposite frecce pulsati, le azioni possibili.
 
@@ -67,7 +67,7 @@ Una **_polybézier_**, o curva di Bézier composta, è una **curva di Bézier** 
     (\#eq:bezier)
 \end{equation}
 
-La curva passa per i punti $\mathbf{P}_0$ e $\mathbf{P}_3$, ma non per i punti $\mathbf{P}_1$ e $\mathbf{P}$ che sono di _controllo_ e forniscono informazioni direzionali. Il modo più semplice per comprendere la sua natura è visualizzarla:
+La curva passa per i punti $\mathbf{P}_0$ e $\mathbf{P}_3$, ma non per i punti $\mathbf{P}_1$ e $\mathbf{P}_2$ che sono di _controllo_ e forniscono informazioni direzionali. Il modo più semplice per comprendere la sua natura è visualizzarla:
 
 ```{r bezier, out.width='36%', fig.asp=1, fig.align='center', echo=FALSE}
 knitr::include_graphics(rep('_images/bezier.png'))
@@ -79,7 +79,7 @@ Una _polybézier_ cubica è formata da un numero $M \in \mathbb{N}$ di curve $\m
 knitr::include_graphics(rep('_images/polybezier.png'))
 ```
 
-Ho disegnate le curve con [_**Inkscape**_](https://inkscape.org/), un editor grafico vettoriale _open source_. Il file generato - di formato SVG - può essere aperto con semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle [funzioni _JavaScript_](https://github.com/Bradwave/thesis) per trasformare una stringa testuale in coordinate numeriche, **trovare le coordinate** di un punto $\mathbf{P}(t)$ giacente sulla curva dato $t$
+Ho disegnato le curve con [_**Inkscape**_](https://inkscape.org/), un editor grafico vettoriale _open source_. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle [funzioni _JavaScript_](https://github.com/Bradwave/thesis) per trasformare una stringa testuale in coordinate numeriche, **trovare le coordinate** di un punto $\mathbf{P}(t)$ giacente sulla curva dato $t$
 
 ```javascript
 getPoint(p0, p1, p2, p3, t) {
@@ -105,8 +105,8 @@ samplePoints(N) {
         % this.points.length]
     };
     for (let k = 0; k < N; k++) {
-      sampledPoints[k + j * N] = this.getPoint(points.p0, points.p1,
-          points.p2, points.p3, k * s);
+      sampledPoints[k + j * N] = this.getPoint(points.p0,
+        points.p1, points.p2, points.p3, k * s);
     }
   }
   return sampledPoints;
@@ -117,7 +117,7 @@ samplePoints(N) {
 Non potendo computare esplicitamente i **coefficienti di Fourier** con l'integrale
 $$ c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ , $$
 sono ricorso alla **trasformata discreta di Fourier**.<br>
-Per farlo, è necessario assumere che la funzione $f(t)$ di cui si vogliono calcolare i coefficienti sia periodica di periodo $a$ e che $N$ dei suoi valori siano equamente distanziati sul periodo:
+Per farlo, è necessario assumere che la funzione $f(t)$, di cui si vogliono calcolare i coefficienti, sia periodica di periodo $a$ e che $N$ dei suoi valori siano equamente distanziati sul periodo:
 
 $$f \bigg( k\frac{a}{N} \bigg)=y_{k} \ , \ \ k=0,1,2,..., N-1 \ .$$
 Pertanto, si assume che il segnale $f(t)$ sia campionato a tempi equamente distanziati di $\frac{a}{N}$ unità.<br>
@@ -212,7 +212,7 @@ for (let i = 0; i < path.length - 1; i ++) {
 Come già spiegato in un [precedente capitolo](#presentzione), le slide sono state create attraverso il _framework_ per presentazioni HTML [_**Reveal.js**_](https://revealjs.com/), modificato e **personalizzato** per meglio adattarsi alla [visione artistica](#filosofia) generale del progetto. _Reveal.js_ permette di scrivere la presentazione usando il noto linguaggio di _markup_ HTML. Questo approccio offre numerosi vantaggi: la _portabilità_ del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
 Inoltre, l'aspetto estetico può essere controllato tramite un [apposito _style sheet_ CSS]() in modo rapido e preciso.
 
-La scelta è ricaduta su questo approccio per la necessità di **integrare fluidamente** le animazioni: _Reveal.js_ consente infatti di visualizzare pagine web sullo sfondo delle slide: ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br>
+La scelta è ricaduta su questo approccio per la necessità di **integrare fluidamente** le animazioni. _Reveal.js_ consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br>
 
 ```html
 <!-- Convergenza -->

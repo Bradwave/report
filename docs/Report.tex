@@ -128,7 +128,7 @@
 
 L'idea per l'argomento della tesi nasce dal video \href{https://www.youtube.com/watch?v=r6sGWTCMz2k}{\emph{But what is a Fourier series? From heat flow to circle drawings}} pubblicato su YouTube da Grant Sanderson, noto come \href{https://www.youtube.com/c/3blue1brown}{\emph{\textbf{3Blue1Brown}}}. Rimasto colpito dal fascino estetico delle animazioni e dalla loro squisita immediatezza, ho deciso di approfondirne i fondamenti teorici.
 
-Il cuore della tesi è la \href{https://bradwave.github.io/thesis}{\textbf{presentazione}} che, oltre ad una dissertazione teorica del tema, ripropone le suddette \textbf{animazioni}, da me ricreate ed adattate. La presentazione è affinata per agevolare la comprensione attraverso l'\textbf{interazione} con diversi suoi elementi e aspira ad essere un esempio di applicazione delle tecnologie informatiche a fini didattici.
+Il cuore della tesi è la \href{https://bradwave.github.io/thesis}{\textbf{presentazione}} che, oltre ad una dissertazione teorica del tema, ripropone le suddette \textbf{animazioni}, da me ricreate ed adattate. La presentazione è affinata per agevolarne la comprensione attraverso l'\textbf{interazione} con diversi suoi elementi e aspira ad essere un esempio di applicazione delle tecnologie informatiche a fini didattici.
 
 Essa è il risultato di quasi un anno di lavoro e studio personale e concretizza la mia idea di presentare la matematica in modo \textbf{coinvolgente} e con l'ausilio di \textbf{visualizzazioni grafiche} di forte impatto e semplice interpretazione.
 
@@ -138,7 +138,7 @@ Essa è il risultato di quasi un anno di lavoro e studio personale e concretizza
 \hypertarget{prototipi}{%
 \section{Primi prototipi}\label{prototipi}}
 
-Dopola visione del \href{https://www.youtube.com/watch?v=r6sGWTCMz2k}{video sopracitato} nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in \emph{Javascript} seguendo \href{https://www.youtube.com/watch?v=MY4luNgGfms}{alcuni tutorial} di \href{https://www.youtube.com/thecodingtrain}{\emph{The Coding Train}}. A dicembre dello stesso anno ho poi riscritto il precedente prototipo in \emph{Java} e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e la loro implementazione.
+Dopola visione del \href{https://www.youtube.com/watch?v=r6sGWTCMz2k}{video sopracitato} nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in \emph{JavaScript} seguendo \href{https://www.youtube.com/watch?v=MY4luNgGfms}{alcuni tutorial} di \href{https://www.youtube.com/thecodingtrain}{\emph{The Coding Train}}. A dicembre dello stesso anno ho poi riscritto il precedente prototipo in \emph{Java} e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e con la loro implementazione.
 
 \hypertarget{ricerca}{%
 \section{Ricerca teorica}\label{ricerca}}
@@ -153,17 +153,17 @@ dove \(c_n \in \mathbb{C}\) e \(n \in \mathbb{Z}\), sotto \emph{minime ipotesi} 
 
 Inoltre, durante lo sviluppo del software, si è rivelato utile affrontare il tema delle curve di Bèzier, in particolare delle \emph{polybézier} - ovvero di una curva di Bèzier continua definita a tratti. Per potenziare le mie conoscenze in materia, ho fatto uso del libro \emph{A Primer on Bézier Curves}, \href{https://pomax.github.io/bezierinfo/}{disponibile online}, che mi ha fornito le basi necessarie per manipolare tali oggetti da un punto di vista informatico.
 
-Prima della fase di programmazione si è poi resa necessaria una ricerca degli strumenti informatici più adatti. Una discussione degli strumenti adottati e del loro impiego è consultabile al capitolo dedicato\ldots{}
+Prima della fase di programmazione si è poi resa necessaria una ricerca degli strumenti informatici più adatti. Una discussione degli strumenti adottati e del loro impiego è consultabile al \protect\hyperlink{software}{capitolo dedicato}.
 
 \hypertarget{animazioni}{%
 \section{Animazioni}\label{animazioni}}
 
 Terminata la raccolta e lo studio delle informazioni necessarie, ha potuto avere inizio la programmazione delle animazioni in maniera più accurata rispetto ai \protect\hyperlink{prototipi}{primi prototipi}.
-Il loro sviluppo è avvenuto in \emph{JavaScript}, facendo ampio uso delle librerie \emph{open source} \href{https://p5js.org/}{\emph{p5.js}}, per il \emph{creative coding}, e \emph{complex.js}, per la gestione dei numeri complessi. Ciò ha permesso, a differenza di un video, di rendere le animazioni \textbf{interattive}, andando così a potenziare il legame con lo spettatore che si trasforma quindi in utente attivo.
+Il loro sviluppo è avvenuto in \emph{JavaScript}, facendo ampio uso delle librerie \emph{open source} \href{https://p5js.org/}{\emph{p5.js}}, per il \emph{creative coding}, e \href{https://github.com/infusion/Complex.js/}{\emph{complex.js}}, per la gestione dei numeri complessi. Ciò ha permesso, a differenza di un semplice video, di rendere le animazioni \textbf{interattive}, andando così a potenziare il legame con lo spettatore che si trasforma quindi in \textbf{utente attivo}.
 
 L'obiettivo delle animazioni è quello di agevolare la comprensione dei concetti teorici tramite una loro \textbf{visualizzazione immediata} e metterne in evidenza le sfaccettature più nascoste, andando ad affiancare ed assistere l'ingegno e le capacità immaginative dei loro fruitori.
 
-Molta attenzione è stata riposta nella loro \textbf{estetica}, dacché ritengo che l'aspetto artistico non sia affatto secondario al contenuto, ma piuttosto funzionale a quest'ultimo, poiché in grado di avvicinare e coinvolgere lo spettatore-utente instaurando una connessione emotiva e sensoriale più forte.
+Molta attenzione è stata riposta nella loro \textbf{estetica}, in quanto ritengo che l'aspetto artistico non sia affatto secondario al contenuto, ma piuttosto funzionale a quest'ultimo, poiché in grado di avvicinare e coinvolgere lo spettatore-utente instaurando una connessione emotiva e sensoriale più forte.
 La filosofia alla base di questo approccio deriva sicuramente dalla visione artistica del \href{https://www.youtube.com/watch?v=r6sGWTCMz2k}{video originale}. Tuttavia, è stata ampiamente influenzata anche dagli \emph{Elementi} di Euclide a colori, ovvero un'edizione del celebre libro di geometria in cui simboli e figure colorate sostituiscono le lettere, e dal pensiero del suo autore, Oliver Byrne, che ho avuto modo di apprezzare durante il corso di \emph{Storia della Matematica Antica e Moderna}.
 
 Ho infine curato l'\textbf{accessibilità}, ovvero la facilità di utilizzo, e la \textbf{portabilità}, cioè la corretta visualizzazione e fruizione su diversi tipi di dispositivi, principi chiavi per garantire all'utente un'esperienza fluida e priva di ostacoli o barriere di carattere tecnico.
@@ -222,7 +222,7 @@ Seguono immediatamente \textbf{due animazioni} per visualizzare un polinomio tri
 \begin{itemize}
 \tightlist
 \item
-  Nella \href{https://bradwave.github.io/thesis/animations/s2-animation.html}{prima} è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} - \textbf{costruire progressivamente} un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.
+  Nella \href{https://bradwave.github.io/thesis/animations/s2-animation.html}{prima} è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - \textbf{costruire progressivamente} un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.
   Il primo elemento visibile è il coefficiente \(c_0\), ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso \(c_n\) moltiplicato per \(e_n(t)=e^{2\pi in\frac{t}{a}}\) ovvero la curva chiusa complessa con supporto la \emph{circonferenza unitaria}, percorsa con frequenza \(n\). Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, \(c_n \cdot e_n(t)\) rappresenta la curva chiusa con supporto una circonferenza di \emph{raggio} \(|c_n|\) e una \emph{fase} \(arg(c_n)=\theta_n\) ( dove \(c_n=r_{n}e^{i\theta_n}\)) rispetto alla curva \(|c_n| \cdot e_n(t)\).
   Le varie componenti del tipo \(c_n \cdot e_n(t)\) possono essere sommate con la definizione usuale di somma in campo complesso, ottenendo una curva che rappresenta proprio il polinomio trigonometrico.
 \end{itemize}
@@ -232,21 +232,21 @@ Seguono immediatamente \textbf{due animazioni} per visualizzare un polinomio tri
 \begin{itemize}
 \tightlist
 \item
-  Nella \href{https://bradwave.github.io/thesis/animations/s3-animation.html}{seconda animazione} è possibile - sempre tramite \emph{rotella del mouse} o \emph{trascinamento verticale} - rivelare l'asse della variabile \(t\) per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio \(\mathbb{R} \times \mathbb{C}\).
+  Nella \href{https://bradwave.github.io/thesis/animations/s3-animation.html}{seconda animazione} è possibile - sempre tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - rivelare l'asse della variabile \(t\) per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio \(\mathbb{R} \times \mathbb{C}\).
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.5\linewidth]{_images/pol-3d} \end{center}
 
-Introduciamo quindi \(T_n\), spazio vettoriale dei polinomi trigonometrici \(p(t)\) di grado minore o uguale a \(N\), dotato del prodotto scalare
+Introduciamo quindi \(T_n\), spazio vettoriale (di dimensione \(2N-1\)) dei polinomi trigonometrici \(p(t)\) di grado minore o uguale a \(N\), dotato del prodotto scalare
 \[(p,q) = \int_{0}^{a} p(t) \overline{q}(t)dt \ .\]
-Da \((p,n)=ac_n\) ricaviamo quindi la \emph{\textbf{formula di Fourier}}
+Da \((p,n)=a\cdot c_n\) ricaviamo quindi la \emph{\textbf{formula di Fourier}}
 
 \begin{equation}
   c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
   \label{eq:formulafourier}
 \end{equation}
 
-Si pone quindi la \textbf{domanda fondamentale}:
+Ci poniamo dunque la \textbf{domanda fondamentale}:
 
 \begin{quote}
 se \(f: \mathbb{R} \longrightarrow \mathbb{C} \ \) è una funzione arbitraria di periodo \(a\), possiamo trovare una decomposizione di \(f\) della forma
@@ -260,17 +260,17 @@ sotto minime ipotesi su \(f\) ?
 \hypertarget{seriefourier}{%
 \section{Segnali periodici e serie di Fourier}\label{seriefourier}}
 
-In un celebre articolo del 1807, \textbf{Joseph Fourier} afferma che la risposta a tale domanda sia affermativa, a patto siano consentite somme infinite.
+In un celebre articolo del 1807, \textbf{Joseph Fourier} afferma che la risposta a tale domanda è affermativa, a patto che siano consentite somme infinite.
 
 È possibile ridefinire questa risposta con gli strumenti della matematica moderna.
-Per farlo introduciamo lo spazio
+Per farlo, introduciamo lo spazio
 \[L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt < -\infty\bigg\}\]
 
 che, dotato delle usuali operazioni, è uno \textbf{spazio vettoriale}. Definiamo quindi il \emph{prodotto scalare}
 \[(f,g) = \int_{0}^{a} f(t) \overline{g}(t)dt \ ,\]
 
 e la \emph{norma} associata
-\[ \Vert f \Vert_2 = \left( \int_{0}^{a} |f(t)|^2 dt \right) ^{\textstyle \frac{1}{2}}\]
+\[ \Vert f \Vert_2 = \left( \int_{0}^{a} |f(t)|^2 dt \right) ^{\textstyle \frac{1}{2}} \ .\]
 Per rispondere alla \emph{domanda fondamentale} occorre trovare l'elemento \(f_N\) nel sottospazio \(T_n\) di \(L_{p}^{2}(0,a)\) che ha la minima distanza da \(f\). Se esiste, lo chiamiamo la \emph{\textbf{miglior approssimazione}} di \(f\) in \(T_{n}\).
 La soluzione è fornita dal seguente teorema:
 
@@ -294,7 +294,7 @@ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
 \end{quote}
 
 Il passaggio successivo consiste nello studio della \textbf{convergenza}.
-Grazie ad un \href{https://bradwave.github.io/thesis/animations/s4-animation.html}{\textbf{esempio animato}}, è possibile osservare come l'approssimazione, data da una somma di seni, tenda a alla funzione \emph{onda quadra}:
+Grazie ad un \href{https://bradwave.github.io/thesis/animations/s4-animation.html}{\textbf{esempio animato}}, è possibile osservare come l'approssimazione, data da una somma di seni, tenda alla funzione \emph{onda quadra}:
 
 \begin{itemize}
 \tightlist
@@ -302,11 +302,11 @@ Grazie ad un \href{https://bradwave.github.io/thesis/animations/s4-animation.htm
   è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} - aumentare in numero di addendi nella somma e, quindi, migliorare l'approssimazione.
 \end{itemize}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{_images/appr} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{_images/approx} \end{center}
 
 In conclusione, è possibile scrivere:
 \[ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .\]
-Si noti che questa è un'equivalenza nella norma di \(L_{p}^{2}(0,a)\) e \textbf{non} significa che, per qualunque valore di \(t\), il \(f(t)\) sia uguale alla somma della serie.
+Si noti che questa è un'equivalenza nella norma di \(L_{p}^{2}(0,a)\) e \textbf{non} significa che, per qualunque valore di \(t\), \(f(t)\) sia uguale alla somma della serie.
 
 \hypertarget{rapprpunt}{%
 \section{Rappresentazione puntuale}\label{rapprpunt}}
@@ -314,7 +314,7 @@ Si noti che questa è un'equivalenza nella norma di \(L_{p}^{2}(0,a)\) e \textbf
 \hypertarget{software}{%
 \chapter{Software}\label{software}}
 
-Questo capitolo sarà dedicato ad una discussione dettagliata di alcune delle più interessanti tecniche informatiche e dei programmi impiegati nella la realizzazione della presentazione e delle animazioni.
+Questo capitolo è dedicato ad una discussione dettagliata di alcune delle più interessanti tecniche informatiche e dei programmi impiegati nella realizzazione della presentazione e delle animazioni.
 
 Il \textbf{codice} è interamente disponibile su \href{https://github.com/Bradwave/thesis}{\emph{\textbf{GitHub}}}.
 
@@ -332,7 +332,7 @@ Data la peculiarità del \textbf{sistema di coordinate a schermo} utilizzato da 
 
 \begin{center}\includegraphics[width=0.6\linewidth]{_images/screen} \end{center}
 
-Le funzione \emph{toCartesian} - responsabile della conversione da coordiate a schermo a coordinate cartesiane - tiene conto della dimensione della finestra, informazione contenuta in \emph{descaleFactor}, e della posizione del centro della finestra:
+La funzione \emph{toCartesian} - responsabile della conversione da coordiate a schermo a coordinate cartesiane - tiene conto della dimensione della finestra, informazione contenuta in \emph{descaleFactor}, e della posizione del centro della finestra:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -359,7 +359,7 @@ Lo stesso vale per la funzione inversa, che converte le coordinate cartesiane in
 \hypertarget{progrbar}{%
 \subsection{Barra del progresso}\label{progrbar}}
 
-La \href{https://github.com/Bradwave/thesis/blob/master/animations/js/utils/progressGraphics.js}{\textbf{barra del progresso}} (o \emph{progress bar}) è un'importante strumento di \textbf{accessibilità} e restituisce un \emph{feedback} in merito al progresso possibile nell'interazione da parte dell'utente con l'animazione. La barra è posizionata sul lato destro dello schermo e monitora il comportamento dell'utente, attivandosi solo durante un interazione e scomparendo dopo qualche secondo, per non interferire con il resto dell'animazione.
+La \href{https://github.com/Bradwave/thesis/blob/master/animations/js/utils/progressGraphics.js}{\textbf{barra del progresso}} (o \emph{progress bar}) è un importante strumento di \textbf{accessibilità} e restituisce un \emph{feedback} in merito al progresso possibile nell'interazione da parte dell'utente con l'animazione. La barra è posizionata sul lato destro dello schermo e monitora il comportamento dell'utente, attivandosi solo durante un'interazione e scomparendo dopo qualche secondo, per non interferire con il resto dell'animazione.
 
 È inoltre accompagnata da un'\textbf{icona} di un \textbf{mouse}, da me disegnata, che comunica all'utente, con delle apposite frecce pulsati, le azioni possibili.
 
@@ -380,7 +380,7 @@ Una \textbf{\emph{polybézier}}, o curva di Bézier composta, è una \textbf{cur
     \label{eq:bezier}
 \end{equation}
 
-La curva passa per i punti \(\mathbf{P}_0\) e \(\mathbf{P}_3\), ma non per i punti \(\mathbf{P}_1\) e \(\mathbf{P}\) che sono di \emph{controllo} e forniscono informazioni direzionali. Il modo più semplice per comprendere la sua natura è visualizzarla:
+La curva passa per i punti \(\mathbf{P}_0\) e \(\mathbf{P}_3\), ma non per i punti \(\mathbf{P}_1\) e \(\mathbf{P}_2\) che sono di \emph{controllo} e forniscono informazioni direzionali. Il modo più semplice per comprendere la sua natura è visualizzarla:
 
 \begin{center}\includegraphics[width=0.36\linewidth]{_images/bezier} \end{center}
 
@@ -388,7 +388,7 @@ Una \emph{polybézier} cubica è formata da un numero \(M \in \mathbb{N}\) di cu
 
 \begin{center}\includegraphics[width=0.75\linewidth]{_images/polybezier} \end{center}
 
-Ho disegnate le curve con \href{https://inkscape.org/}{\emph{\textbf{Inkscape}}}, un editor grafico vettoriale \emph{open source}. Il file generato - di formato SVG - può essere aperto con semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle \href{https://github.com/Bradwave/thesis}{funzioni \emph{JavaScript}} per trasformare una stringa testuale in coordinate numeriche, \textbf{trovare le coordinate} di un punto \(\mathbf{P}(t)\) giacente sulla curva dato \(t\)
+Ho disegnato le curve con \href{https://inkscape.org/}{\emph{\textbf{Inkscape}}}, un editor grafico vettoriale \emph{open source}. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle \href{https://github.com/Bradwave/thesis}{funzioni \emph{JavaScript}} per trasformare una stringa testuale in coordinate numeriche, \textbf{trovare le coordinate} di un punto \(\mathbf{P}(t)\) giacente sulla curva dato \(t\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -418,8 +418,8 @@ e infine \textbf{campionare \(N\) punti} lungo la \emph{polybézier}, \textbf{di
         \OperatorTok{%} \KeywordTok{this}\NormalTok{.}\VariableTok{points}\NormalTok{.}\AttributeTok{length}\NormalTok{]}
     \OperatorTok{\};}
     \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ k }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ k}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
-\NormalTok{      sampledPoints[k }\OperatorTok{+}\NormalTok{ j }\OperatorTok{*}\NormalTok{ N] }\OperatorTok{=} \KeywordTok{this}\NormalTok{.}\AttributeTok{getPoint}\NormalTok{(}\VariableTok{points}\NormalTok{.}\AttributeTok{p0}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p1}\OperatorTok{,}
-          \VariableTok{points}\NormalTok{.}\AttributeTok{p2}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p3}\OperatorTok{,}\NormalTok{ k }\OperatorTok{*}\NormalTok{ s)}\OperatorTok{;}
+\NormalTok{      sampledPoints[k }\OperatorTok{+}\NormalTok{ j }\OperatorTok{*}\NormalTok{ N] }\OperatorTok{=} \KeywordTok{this}\NormalTok{.}\AttributeTok{getPoint}\NormalTok{(}\VariableTok{points}\NormalTok{.}\AttributeTok{p0}\OperatorTok{,}
+        \VariableTok{points}\NormalTok{.}\AttributeTok{p1}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p2}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p3}\OperatorTok{,}\NormalTok{ k }\OperatorTok{*}\NormalTok{ s)}\OperatorTok{;}
     \OperatorTok{\}}
   \OperatorTok{\}}
   \ControlFlowTok{return}\NormalTok{ sampledPoints}\OperatorTok{;}
@@ -433,7 +433,7 @@ e infine \textbf{campionare \(N\) punti} lungo la \emph{polybézier}, \textbf{di
 Non potendo computare esplicitamente i \textbf{coefficienti di Fourier} con l'integrale
 \[ c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ , \]
 sono ricorso alla \textbf{trasformata discreta di Fourier}.
-Per farlo, è necessario assumere che la funzione \(f(t)\) di cui si vogliono calcolare i coefficienti sia periodica di periodo \(a\) e che \(N\) dei suoi valori siano equamente distanziati sul periodo:
+Per farlo, è necessario assumere che la funzione \(f(t)\), di cui si vogliono calcolare i coefficienti, sia periodica di periodo \(a\) e che \(N\) dei suoi valori siano equamente distanziati sul periodo:
 
 \[f \bigg( k\frac{a}{N} \bigg)=y_{k} \ , \ \ k=0,1,2,..., N-1 \ .\]
 Pertanto, si assume che il segnale \(f(t)\) sia campionato a tempi equamente distanziati di \(\frac{a}{N}\) unità.
@@ -534,7 +534,7 @@ I \textbf{punti} sono quindi \textbf{salvati} in un vettore (\emph{path}) e \tex
 Come già spiegato in un \protect\hyperlink{presentzione}{precedente capitolo}, le slide sono state create attraverso il \emph{framework} per presentazioni HTML \href{https://revealjs.com/}{\emph{\textbf{Reveal.js}}}, modificato e \textbf{personalizzato} per meglio adattarsi alla \protect\hyperlink{filosofia}{visione artistica} generale del progetto. \emph{Reveal.js} permette di scrivere la presentazione usando il noto linguaggio di \emph{markup} HTML. Questo approccio offre numerosi vantaggi: la \emph{portabilità} del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.
 Inoltre, l'aspetto estetico può essere controllato tramite un \href{}{apposito \emph{style sheet} CSS} in modo rapido e preciso.
 
-La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare fluidamente} le animazioni: \emph{Reveal.js} consente infatti di visualizzare pagine web sullo sfondo delle slide: ciò mi ha permesso di collegare i file HTML contententi le animazioni.
+La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare fluidamente} le animazioni. \emph{Reveal.js} consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.
 
 \begin{Shaded}
 \begin{Highlighting}[]
