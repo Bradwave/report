@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitolo 1 Fasi del lavoro | Relazione di tesi:  La serie di Fourier  e una sua applicazione alla grafica</title>
+  <meta name="description" content="Relazione di tesi" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitolo 1 Fasi del lavoro | Relazione di tesi:  La serie di Fourier  e una sua applicazione alla grafica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Relazione di tesi" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitolo 1 Fasi del lavoro | Relazione di tesi:  La serie di Fourier  e una sua applicazione alla grafica" />
+  
+  <meta name="twitter:description" content="Relazione di tesi" />
+  
+
+<meta name="author" content="Matteo Bramardi, candidato" />
+<meta name="author" content="Prof. Paolo Boggiatto, relatore" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="commento.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Relazione di tesi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduzione</a></li>
+<li class="chapter" data-level="1" data-path="lavoro.html"><a href="lavoro.html"><i class="fa fa-check"></i><b>1</b> Fasi del lavoro</a><ul>
+<li class="chapter" data-level="1.1" data-path="lavoro.html"><a href="lavoro.html#prototipi"><i class="fa fa-check"></i><b>1.1</b> Primi prototipi</a></li>
+<li class="chapter" data-level="1.2" data-path="lavoro.html"><a href="lavoro.html#ricerca"><i class="fa fa-check"></i><b>1.2</b> Ricerca teorica</a></li>
+<li class="chapter" data-level="1.3" data-path="lavoro.html"><a href="lavoro.html#animazioni"><i class="fa fa-check"></i><b>1.3</b> Animazioni</a></li>
+<li class="chapter" data-level="1.4" data-path="lavoro.html"><a href="lavoro.html#presentazione"><i class="fa fa-check"></i><b>1.4</b> Presentazione</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="commento.html"><a href="commento.html"><i class="fa fa-check"></i><b>2</b> Commento alla presentazione</a><ul>
+<li class="chapter" data-level="" data-path="commento.html"><a href="commento.html#features"><i class="fa fa-check"></i>Funzionalità</a></li>
+<li class="chapter" data-level="2.1" data-path="commento.html"><a href="commento.html#segntrig"><i class="fa fa-check"></i><b>2.1</b> Segnali trigonometrici</a></li>
+<li class="chapter" data-level="2.2" data-path="commento.html"><a href="commento.html#seriefourier"><i class="fa fa-check"></i><b>2.2</b> Segnali periodici e serie di Fourier</a></li>
+<li class="chapter" data-level="2.3" data-path="commento.html"><a href="commento.html#rapprpunt"><i class="fa fa-check"></i><b>2.3</b> Rappresentazione puntuale</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>3</b> Software</a><ul>
+<li class="chapter" data-level="3.1" data-path="software.html"><a href="software.html#softan"><i class="fa fa-check"></i><b>3.1</b> Animazioni</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="software.html"><a href="software.html#coordsystem"><i class="fa fa-check"></i><b>3.1.1</b> Sistema di coordinate</a></li>
+<li class="chapter" data-level="3.1.2" data-path="software.html"><a href="software.html#progrbar"><i class="fa fa-check"></i><b>3.1.2</b> Barra del progresso</a></li>
+<li class="chapter" data-level="3.1.3" data-path="software.html"><a href="software.html#anserie"><i class="fa fa-check"></i><b>3.1.3</b> La serie di Fourier</a></li>
+<li class="chapter" data-level="3.1.4" data-path="software.html"><a href="software.html#dft"><i class="fa fa-check"></i><b>3.1.4</b> La trasformata discreta di Fourier</a></li>
+<li class="chapter" data-level="3.1.5" data-path="software.html"><a href="software.html#rapprserie"><i class="fa fa-check"></i><b>3.1.5</b> La rappresentazione della serie di Fourier</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#pressoft"><i class="fa fa-check"></i><b>3.2</b> Presentazione</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Pubblicato con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><small>Relazione di tesi: </small><br><big><i>La serie di Fourier </i></big><br><small><i>e una sua applicazione alla grafica</i></small></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lavoro" class="section level1">
+<h1><span class="header-section-number">Capitolo 1</span> Fasi del lavoro</h1>
+<p><br></p>
+<div id="prototipi" class="section level2">
+<h2><span class="header-section-number">1.1</span> Primi prototipi</h2>
+<p>Dopola visione del <a href="https://www.youtube.com/watch?v=r6sGWTCMz2k">video sopracitato</a> nel mese di luglio 2019, ho realizzato il primo prototipo dell’animazione principale in <em>Javascript</em> seguendo <a href="https://www.youtube.com/watch?v=MY4luNgGfms">alcuni tutorial</a> di <a href="https://www.youtube.com/thecodingtrain"><em>The Coding Train</em></a>. A dicembre dello stesso anno ho poi riscritto il precedente prototipo in <em>Java</em> e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell’animazione e la loro implementazione.</p>
+<p><br></p>
+</div>
+<div id="ricerca" class="section level2">
+<h2><span class="header-section-number">1.2</span> Ricerca teorica</h2>
+<p>Già nel mese di dicembre 2019 mi ero approcciato allo studio della trasformata di Fourier e di una sua applicazione alla compressione delle immagini con il metodo JPEG <em>lossy</em> - basato sulla trasformata discreta del coseno - con lo scopo di produrre un trittico di poster sull’argomento, parte della prova di esame del corso di <em>Analisi Matematica 3</em>.</p>
+<p>La fase di ricerca teorica vera e propria ha avuto inizio nel mese di marzo 2020 e, su indicazione del mio relatore Prof. Paolo Boggiatto, ha riguardato principalmente lo studio approfondito di alcune sezioni del libro <em><strong>Fourier Analysis and Applications</strong></em> di C. Gasquet e P. Witomski: nello specifico, il capitolo II - <em>i segnali periodici e la serie di Fourier</em> -, la lezione 8 del capitolo III - <em>la trasformata discreta di Fourier</em> - e le lezioni 17, 18 e 19 del capitolo VI - <em>la trasformata di Fourier di funzioni integrabili, la trasformata inversa e lo spazio <span class="math inline">\(\mathcal{S}(\mathbb{R})\)</span></em>.</p>
+<p>La questione centrale della tesi, alla base del funzionamento dell’animazione, riguarda la possibilità di scrivere una funzione <span class="math inline">\(f: \mathbb{R} \longrightarrow \mathbb{C}\)</span> periodica di periodo <span class="math inline">\(a\)</span> come
+<span class="math display">\[f(t)=\sum_{n=-\infty}^{+\infty}c_{n}e^{2\pi in \frac{t}{a}} \ ,\]</span>
+dove <span class="math inline">\(c_n \in \mathbb{C}\)</span> e <span class="math inline">\(n \in \mathbb{Z}\)</span>, sotto <em>minime ipotesi</em> sulla funzione <span class="math inline">\(f\)</span>.</p>
+<p>Inoltre, durante lo sviluppo del software, si è rivelato utile affrontare il tema delle curve di Bèzier, in particolare delle <em>polybézier</em> - ovvero di una curva di Bèzier continua definita a tratti. Per potenziare le mie conoscenze in materia, ho fatto uso del libro <em>A Primer on Bézier Curves</em>, <a href="https://pomax.github.io/bezierinfo/">disponibile online</a>, che mi ha fornito le basi necessarie per manipolare tali oggetti da un punto di vista informatico.</p>
+<p>Prima della fase di programmazione si è poi resa necessaria una ricerca degli strumenti informatici più adatti. Una discussione degli strumenti adottati e del loro impiego è consultabile al capitolo dedicato…</p>
+<p><br></p>
+</div>
+<div id="animazioni" class="section level2">
+<h2><span class="header-section-number">1.3</span> Animazioni</h2>
+<p>Terminata la raccolta e lo studio delle informazioni necessarie, ha potuto avere inizio la programmazione delle animazioni in maniera più accurata rispetto ai <a href="lavoro.html#prototipi">primi prototipi</a>.
+Il loro sviluppo è avvenuto in <em>JavaScript</em>, facendo ampio uso delle librerie <em>open source</em> <a href="https://p5js.org/"><em>p5.js</em></a>, per il <em>creative coding</em>, e <em>complex.js</em>, per la gestione dei numeri complessi. Ciò ha permesso, a differenza di un video, di rendere le animazioni <strong>interattive</strong>, andando così a potenziare il legame con lo spettatore che si trasforma quindi in utente attivo.</p>
+<p>L’obiettivo delle animazioni è quello di agevolare la comprensione dei concetti teorici tramite una loro <strong>visualizzazione immediata</strong> e metterne in evidenza le sfaccettature più nascoste, andando ad affiancare ed assistere l’ingegno e le capacità immaginative dei loro fruitori.</p>
+<p>Molta attenzione è stata riposta nella loro <strong>estetica</strong>, dacché ritengo che l’aspetto artistico non sia affatto secondario al contenuto, ma piuttosto funzionale a quest’ultimo, poiché in grado di avvicinare e coinvolgere lo spettatore-utente instaurando una connessione emotiva e sensoriale più forte.<br>
+La filosofia alla base di questo approccio deriva sicuramente dalla visione artistica del <a href="https://www.youtube.com/watch?v=r6sGWTCMz2k">video originale</a>. Tuttavia, è stata ampiamente influenzata anche dagli <em>Elementi</em> di Euclide a colori, ovvero un’edizione del celebre libro di geometria in cui simboli e figure colorate sostituiscono le lettere, e dal pensiero del suo autore, Oliver Byrne, che ho avuto modo di apprezzare durante il corso di <em>Storia della Matematica Antica e Moderna</em>.<br></p>
+<p>Ho infine curato l’<strong>accessibilità</strong>, ovvero la facilità di utilizzo, e la <strong>portabilità</strong>, cioè la corretta visualizzazione e fruizione su diversi tipi di dispositivi, principi chiavi per garantire all’utente un’esperienza fluida e priva di ostacoli o barriere di carattere tecnico.</p>
+<p><br></p>
+</div>
+<div id="presentazione" class="section level2">
+<h2><span class="header-section-number">1.4</span> Presentazione</h2>
+<p>La presentazione è stata realizzata con <a href="https://revealjs.com/"><em><strong>Reveal.js</strong></em></a>, un framework <em>open source</em> per presentazioni HTML a cui ho apportato diverse personalizzazioni.<br>
+Ciò mi ha permesso di <strong>integrare perfettamente</strong> (ovvero <em>seamlessly</em> in inglese) le <strong>animazioni</strong> nell’ambiente della presentazione, senza richiedere all’utente operazioni aggiuntive. Inoltre, il file HTML può essere visualizzato da un’ampia gamma di dispositivi tramite un qualsiasi <em>browser</em> e le ridotte dimensioni del file lo rendono ideale per la distribuzione online.</p>
+<div id="filosofia" class="section level4 unnumbered">
+<h4></h4>
+<p>La filosofia che mi ha guidato nella creazione delle slide è la stessa discussa nel <a href="lavoro.html#animazioni">precedente paragrafo</a>: accessibilità e piacevolezza estetica hanno costituito il fondamento su cui sviluppare il contenuto e il mezzo con cui esaltarlo, ma senza in alcun modo prevaricarlo. In tal senso, <a href="commento.html#features">diversi accorgimenti</a> sono stati adottati per affinare l’esperienza dell’utente finale.</p>
+</div>
+<div id="section" class="section level4 unnumbered">
+<h4></h4>
+<p>Nel <a href="commento.html#commento">capitolo successivo</a> verrà fornito un commento di carattere teorico alla presentazione.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="commento.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Report.pdf", "Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

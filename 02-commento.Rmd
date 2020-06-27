@@ -1,0 +1,107 @@
+# Commento alla presentazione {#commento}
+
+La presentazione segue per sommi capi le prime due lezioni del **capitolo II** del libro _**Fourier Analysis and Applications**_ di C. Gasquet e P. Witomski, oggetto della [ricerca](#ricerca). Le slide sono autonome da un punto di vista teorico e possono essere utilizzate parallelamente al libro sopracitato come strumento supplementare per l'apprendimento.
+
+<br>
+
+### Funzionalità {-#features}
+
+- Le animazioni sono **integrate** nella presentazione ed è possibile **interagire** con esse;
+- formule, teoremi (o corollari) ed esempi sono demarcati rispettivamente con colore azzurro, verde e giallo per un più **semplice riconoscimento**;
+- formule e teoremi vengono visualizzati in una piccola scheda al passaggio o click del mouse sui rispettivi riferimenti, rendendo **immediata** la loro **consultazione**, mentre un ulteriore click su tali schede conduce alla slide in cui sono stati introdotti;
+
+<br>
+
+## Segnali trigonometrici {#segntrig}
+
+Diciamo _**polinomi trigonometrici**_ le funzioni del tipo
+
+\begin{equation}
+  p(t) = \sum_{n=-N}^N c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ ,
+  (\#eq:poltrig)
+\end{equation}
+
+dove $a,t \in \mathbb{R}, \ c_n \in \mathbb{C}$. $p(t)$ ha periodo $a$ e grado minore o uguale a $N$.
+
+Seguono immediatamente **due animazioni** per visualizzare un polinomio trigonometrico.
+
+* Nella [prima](https://bradwave.github.io/thesis/animations/s2-animation.html) è possibile - tramite _rotella del mouse_ o _trascinamento verticale_ - **costruire progressivamente** un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.<br>
+Il primo elemento visibile è il coefficiente $c_0$, ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso $c_n$ moltiplicato per $e_n(t)=e^{2\pi in\frac{t}{a}}$ ovvero la curva chiusa complessa con supporto la *circonferenza unitaria*, percorsa con frequenza $n$. Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, $c_n \cdot e_n(t)$ rappresenta la curva chiusa con supporto una circonferenza di _raggio_ $|c_n|$ e una _fase_ $arg(c_n)=\theta_n$ ( dove $c_n=r_{n}e^{i\theta_n}$) rispetto alla curva $|c_n| \cdot e_n(t)$.<br>
+Le varie componenti del tipo $c_n \cdot e_n(t)$ possono essere sommate con la definizione usuale di somma in campo complesso, ottenendo una curva che rappresenta proprio il polinomio trigonometrico.
+
+```{r pol-trig, out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics(rep('_images/pol-trig.png'))
+```
+
+* Nella [seconda animazione](https://bradwave.github.io/thesis/animations/s3-animation.html) è possibile - sempre tramite _rotella del mouse_ o _trascinamento verticale_ - rivelare l'asse della variabile $t$ per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio $\mathbb{R} \times \mathbb{C}$.
+
+```{r pol-3d, out.width='50%', fig.asp=.50, fig.align='center', echo=FALSE}
+knitr::include_graphics(rep('_images/pol-3d.png'))
+```
+
+Introduciamo quindi $T_n$, spazio vettoriale dei polinomi trigonometrici $p(t)$ di grado minore o uguale a $N$, dotato del prodotto scalare
+$$(p,q) = \int_{0}^{a} p(t) \overline{q}(t)dt \ .$$
+Da $(p,n)=ac_n$ ricaviamo quindi la _**formula di Fourier**_
+
+\begin{equation}
+  c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
+  (\#eq:formulafourier)
+\end{equation}
+
+Si pone quindi la **domanda fondamentale**:
+
+><i>se $f: \mathbb{R} \longrightarrow \mathbb{C} \ $ è una funzione arbitraria di periodo $a$, possiamo trovare una decomposizione di $f$ della forma</i>
+  \begin{equation}
+    f(t) = \sum c_n e^{2i \pi n\textstyle \frac{t}{a}} \ ,
+    (\#eq:domanda)
+  \end{equation}
+<i>sotto minime ipotesi su $f$ ?</i>
+
+## Segnali periodici e serie di Fourier {#seriefourier}
+
+In un celebre articolo del 1807, **Joseph Fourier** afferma che la risposta a tale domanda sia affermativa, a patto siano consentite somme infinite.
+
+È possibile ridefinire questa risposta con gli strumenti della matematica moderna.<br>
+Per farlo introduciamo lo spazio
+$$L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt < -\infty\bigg\}$$
+
+che, dotato delle usuali operazioni, è uno **spazio vettoriale**. Definiamo quindi il _prodotto scalare_
+$$(f,g) = \int_{0}^{a} f(t) \overline{g}(t)dt \ ,$$
+
+e la _norma_ associata
+$$ \Vert f \Vert_2 = \left( \int_{0}^{a} |f(t)|^2 dt \right) ^{\textstyle \frac{1}{2}}$$
+Per rispondere alla _domanda fondamentale_ occorre trovare l'elemento $f_N$ nel sottospazio $T_n$ di $L_{p}^{2}(0,a)$ che ha la minima distanza da $f$. Se esiste, lo chiamiamo la _**miglior approssimazione**_ di $f$ in $T_{n}$.<br>
+La soluzione è fornita dal seguente teorema:
+
+> #### Teorema {-}
+><i>Esiste un unico polinomio trigonometrico $f_N$ in $T_n$ tale che</i>
+$$ \Vert f - f_N \Vert _{2} = \min_{p \in T_N} \Vert f - p \Vert _{2} $$
+><i>Questo polinomio è dato da</i>
+    \begin{equation}
+    f_{N}(t)=\sum_{n=-N}^{N} c_{n}e^{2\pi in \textstyle \frac {t}{a}} \ ,
+    (\#eq:polsol)
+  \end{equation}
+><i>dove</i>
+  \begin{equation}
+    c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
+    (\#eq:coeffsol)
+  \end{equation}
+
+<br>
+
+Il passaggio successivo consiste nello studio della **convergenza**.<br>
+Grazie ad un [**esempio animato**](https://bradwave.github.io/thesis/animations/s4-animation.html), è possibile osservare come l'approssimazione, data da una somma di seni, tenda a alla funzione _onda quadra_:
+
+* è possibile - tramite _rotella del mouse_ o _trascinamento verticale_ - aumentare in numero di addendi nella somma e, quindi, migliorare l'approssimazione.
+
+```{r appr, out.width='50%', fig.asp=.50, fig.align='center', echo=FALSE}
+knitr::include_graphics(rep('_images/appr.png'))
+```
+
+In conclusione, è possibile scrivere:
+$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .$$
+Si noti che questa è un'equivalenza nella norma di $L_{p}^{2}(0,a)$ e **non** significa che, per qualunque valore di $t$, il $f(t)$ sia uguale alla somma della serie.
+
+## Rappresentazione puntuale {#rapprpunt}
+
+
