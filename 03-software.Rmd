@@ -26,9 +26,9 @@ Le funzione _toCartesian_ - responsabile della conversione da coordiate a scherm
 
 ```javascript
 function toCartesian(x, y) {
-    let cx = (x - xOrigin) * descaleFactor;
-    let cy = (yOrigin - y) * descaleFactor;
-    return createVector(cx, cy);
+  let cx = (x - xOrigin) * descaleFactor;
+  let cy = (yOrigin - y) * descaleFactor;
+  return createVector(cx, cy);
 }
 ```
 
@@ -36,9 +36,9 @@ Lo stesso vale per la funzione inversa, che converte le coordinate cartesiane in
 
 ```javascript
 function toScreenCoord(x, y) {
-    let sx = x * scaleFactor + xOrigin;
-    let sy = yOrigin - y * scaleFactor;
-    return createVector(sx, sy);
+  let sx = x * scaleFactor + xOrigin;
+  let sy = yOrigin - y * scaleFactor;
+  return createVector(sx, sy);
 }
 ```
 
@@ -83,34 +83,34 @@ Ho disegnate le curve con [_**Inkscape**_](https://inkscape.org/), un editor gra
 
 ```javascript
 getPoint(p0, p1, p2, p3, t) {
-        let x = p0.x * pow(1 - t, 3) + 3 * p1.x * t * pow(1 - t, 2)
-            + 3 * p2.x * pow(t, 2) * (1 - t) + p3.x * pow(t, 3);
-        let y = p0.y * pow(1 - t, 3) + 3 * p1.y * t * pow(1 - t, 2)
-            + 3 * p2.y * pow(t, 2) * (1 - t) + p3.y * pow(t, 3);
-        return new Complex(x, y);
-    }
+  let x = p0.x * pow(1 - t, 3) + 3 * p1.x * t * pow(1 - t, 2)
+    + 3 * p2.x * pow(t, 2) * (1 - t) + p3.x * pow(t, 3);
+  let y = p0.y * pow(1 - t, 3) + 3 * p1.y * t * pow(1 - t, 2)
+    + 3 * p2.y * pow(t, 2) * (1 - t) + p3.y * pow(t, 3);
+  return new Complex(x, y);
+}
 ```
 e infine **campionare $N$ punti** lungo la _polybézier_, **distanziati equamente** nella variabile $t \in [0,1]$:
 
 ```javascript
 samplePoints(N) {
-        let s = 1.000000 / N;
-        let M = this.points.length / 3;
-        let sampledPoints = [];
-
-        for (let j = 0; j < M; j++) {
-            let points = {
-                p0: this.points[3 * j], p1: this.points[1 + 3 * j],
-                p2: this.points[2 + 3 * j], p3: this.points[(3 + 3 * j) % this.points.length]
-            };
-            for (let k = 0; k < N; k++) {
-                sampledPoints[k + j * N] = this.getPoint(points.p0, points.p1,
-                    points.p2, points.p3, k * s);
-            }
-        }
-
-        return sampledPoints;
+  let s = 1.000000 / N;
+  let M = this.points.length / 3;
+  let sampledPoints = [];
+  
+  for (let j = 0; j < M; j++) {
+    let points = {
+      p0: this.points[3 * j], p1: this.points[1 + 3 * j],
+      p2: this.points[2 + 3 * j], p3: this.points[(3 + 3 * j)
+        % this.points.length]
+    };
+    for (let k = 0; k < N; k++) {
+      sampledPoints[k + j * N] = this.getPoint(points.p0, points.p1,
+          points.p2, points.p3, k * s);
     }
+  }
+  return sampledPoints;
+}
 ```
 ### La trasformata discreta di Fourier {#dft}
 
@@ -136,24 +136,26 @@ Tradotto in termini informatici, la [funzione responsabile]() del computo della 
 
 ```javascript
 function dft(y) {
-    const Y = [];
-    const N = y.length;
-
-    for (let n = 0; n < N; n++) {
-        let sum = new Complex(0, 0);
-        for (let k = 0; k < N; k++) {
-            const phi = (- TWO_PI * k * n) / N;
-            const c = new Complex(cos(phi), sin(phi));
-            sum.add(y[k].mult(c));
-        }
-        sum = sum.div(N);
-
-        let freq = n;
-        let amp = sum.amp();
-        let phase = sum.phase();
-        Y[n] = { re: sum.re, im: sum.im, freq, amp, phase };
+  const Y = [];
+  const N = y.length;
+  
+  for (let n = 0; n < N; n++) {
+    let sum = new Complex(0, 0);
+    for (let k = 0; k < N; k++) {
+      const phi = (- TWO_PI * k * n) / N;
+      const c = new Complex(cos(phi), sin(phi));
+      sum.add(y[k].mult(c));
     }
-    return Y;
+    sum = sum.div(N);
+
+    let freq = n;
+    let amp = sum.amp();
+    let phase = sum.phase();
+    
+    Y[n] = { re: sum.re, im: sum.im, freq, amp, phase };
+  }
+  
+  return Y;
 }
 ```
 
@@ -208,9 +210,44 @@ for (let i = 0; i < path.length - 1; i ++) {
 ## Presentazione {#pressoft}
 
 Come già spiegato in un [precedente capitolo](#presentzione), le slide sono state create attraverso il _framework_ per presentazioni HTML [_**Reveal.js**_](https://revealjs.com/), modificato e **personalizzato** per meglio adattarsi alla [visione artistica](#filosofia) generale del progetto. _Reveal.js_ permette di scrivere la presentazione usando il noto linguaggio di _markup_ HTML. Questo approccio offre numerosi vantaggi: la _portabilità_ del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
-Inoltre, l'aspetto estetico può essere controllato tramite un apposito _style sheet_ CSS in modo rapido e preciso.
+Inoltre, l'aspetto estetico può essere controllato tramite un [apposito _style sheet_ CSS]() in modo rapido e preciso.
 
-La scelta è ricaduta su questo approccio per la necessità di integrare fluidamente le animazioni: _Reveal.js_ consente infatti di visualizzare pagine web sullo sfondo delle slide: ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br>
+La scelta è ricaduta su questo approccio per la necessità di **integrare fluidamente** le animazioni: _Reveal.js_ consente infatti di visualizzare pagine web sullo sfondo delle slide: ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br>
 
+```html
+<!-- Convergenza -->
+<section
+  data-background-iframe="https://bradwave.github.io/thesis/animations/s4-animation.html"
+	data-preload data-auto-animate>
+	<h4>2.2.1 Convergenza dell'approssimazione $ $</h4>
+	<hr>
+	<p style="margin-top: -1%;">
+		Cosa succede a $f_N$ per $N \rightarrow + \infty$ ?
+	</p>
+	<blockquote class="example" style="width: 80%; margin-top: 5px;
+	  margin-bottom: 5px; position: relative;" data-id="block">
+		<div class="fragment fade-down" data-fragment-index="2"
+			style="position: absolute;
+			  margin-left: auto; margin-right: auto; left: 0; right: 0;">
+			$$ \text{approssimata da: } \ f_N(t)=\frac{4}{\pi} \left( sin(t) +
+			\frac{1}{3}sin(3t) +
+			\frac{1}{3}sin(5t) + ...
+			\right) $$
+		</div>
+		<div class="fragment fade-down" data-fragment-index="1">
+			<div class="fragment fade-out" data-fragment-index="2"
+				style="position: relative;
+				margin-left: auto; margin-right: auto; left: 0; right: 0;">
+				$$ \textit{Esempio: } \ f(t) =
+				\begin{cases}
+				+1, & \text{se $ \ 0 \le t \lt \pi $} \\
+				-1, & \text{se $ \ \pi \le t \lt 2 \pi $}
+				\end{cases} $$
+			</div>
+		</div>
+	</blockquote>
+</section>
+```
+Come visibile in questo esempio...
 
 Le formule matematiche vengono visualizzate grazie al _display engine_ [_**MathJax**_](https://www.mathjax.org/).

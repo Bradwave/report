@@ -337,9 +337,9 @@ Le funzione \emph{toCartesian} - responsabile della conversione da coordiate a s
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{function} \AttributeTok{toCartesian}\NormalTok{(x}\OperatorTok{,}\NormalTok{ y) }\OperatorTok{\{}
-    \KeywordTok{let}\NormalTok{ cx }\OperatorTok{=}\NormalTok{ (x }\OperatorTok{-}\NormalTok{ xOrigin) }\OperatorTok{*}\NormalTok{ descaleFactor}\OperatorTok{;}
-    \KeywordTok{let}\NormalTok{ cy }\OperatorTok{=}\NormalTok{ (yOrigin }\OperatorTok{-}\NormalTok{ y) }\OperatorTok{*}\NormalTok{ descaleFactor}\OperatorTok{;}
-    \ControlFlowTok{return} \AttributeTok{createVector}\NormalTok{(cx}\OperatorTok{,}\NormalTok{ cy)}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ cx }\OperatorTok{=}\NormalTok{ (x }\OperatorTok{-}\NormalTok{ xOrigin) }\OperatorTok{*}\NormalTok{ descaleFactor}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ cy }\OperatorTok{=}\NormalTok{ (yOrigin }\OperatorTok{-}\NormalTok{ y) }\OperatorTok{*}\NormalTok{ descaleFactor}\OperatorTok{;}
+  \ControlFlowTok{return} \AttributeTok{createVector}\NormalTok{(cx}\OperatorTok{,}\NormalTok{ cy)}\OperatorTok{;}
 \OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -349,9 +349,9 @@ Lo stesso vale per la funzione inversa, che converte le coordinate cartesiane in
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{function} \AttributeTok{toScreenCoord}\NormalTok{(x}\OperatorTok{,}\NormalTok{ y) }\OperatorTok{\{}
-    \KeywordTok{let}\NormalTok{ sx }\OperatorTok{=}\NormalTok{ x }\OperatorTok{*}\NormalTok{ scaleFactor }\OperatorTok{+}\NormalTok{ xOrigin}\OperatorTok{;}
-    \KeywordTok{let}\NormalTok{ sy }\OperatorTok{=}\NormalTok{ yOrigin }\OperatorTok{-}\NormalTok{ y }\OperatorTok{*}\NormalTok{ scaleFactor}\OperatorTok{;}
-    \ControlFlowTok{return} \AttributeTok{createVector}\NormalTok{(sx}\OperatorTok{,}\NormalTok{ sy)}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ sx }\OperatorTok{=}\NormalTok{ x }\OperatorTok{*}\NormalTok{ scaleFactor }\OperatorTok{+}\NormalTok{ xOrigin}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ sy }\OperatorTok{=}\NormalTok{ yOrigin }\OperatorTok{-}\NormalTok{ y }\OperatorTok{*}\NormalTok{ scaleFactor}\OperatorTok{;}
+  \ControlFlowTok{return} \AttributeTok{createVector}\NormalTok{(sx}\OperatorTok{,}\NormalTok{ sy)}\OperatorTok{;}
 \OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -393,12 +393,12 @@ Ho disegnate le curve con \href{https://inkscape.org/}{\emph{\textbf{Inkscape}}}
 \begin{Shaded}
 \begin{Highlighting}[]
 \AttributeTok{getPoint}\NormalTok{(p0}\OperatorTok{,}\NormalTok{ p1}\OperatorTok{,}\NormalTok{ p2}\OperatorTok{,}\NormalTok{ p3}\OperatorTok{,}\NormalTok{ t) }\OperatorTok{\{}
-        \KeywordTok{let}\NormalTok{ x }\OperatorTok{=} \VariableTok{p0}\NormalTok{.}\AttributeTok{x} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{3}\NormalTok{) }\OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p1}\NormalTok{.}\AttributeTok{x} \OperatorTok{*}\NormalTok{ t }\OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{2}\NormalTok{)}
-            \OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p2}\NormalTok{.}\AttributeTok{x} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ (}\DecValTok{1} \OperatorTok{-}\NormalTok{ t) }\OperatorTok{+} \VariableTok{p3}\NormalTok{.}\AttributeTok{x} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{3}\NormalTok{)}\OperatorTok{;}
-        \KeywordTok{let}\NormalTok{ y }\OperatorTok{=} \VariableTok{p0}\NormalTok{.}\AttributeTok{y} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{3}\NormalTok{) }\OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p1}\NormalTok{.}\AttributeTok{y} \OperatorTok{*}\NormalTok{ t }\OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{2}\NormalTok{)}
-            \OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p2}\NormalTok{.}\AttributeTok{y} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ (}\DecValTok{1} \OperatorTok{-}\NormalTok{ t) }\OperatorTok{+} \VariableTok{p3}\NormalTok{.}\AttributeTok{y} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{3}\NormalTok{)}\OperatorTok{;}
-        \ControlFlowTok{return} \KeywordTok{new} \AttributeTok{Complex}\NormalTok{(x}\OperatorTok{,}\NormalTok{ y)}\OperatorTok{;}
-    \OperatorTok{\}}
+  \KeywordTok{let}\NormalTok{ x }\OperatorTok{=} \VariableTok{p0}\NormalTok{.}\AttributeTok{x} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{3}\NormalTok{) }\OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p1}\NormalTok{.}\AttributeTok{x} \OperatorTok{*}\NormalTok{ t }\OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{2}\NormalTok{)}
+    \OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p2}\NormalTok{.}\AttributeTok{x} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ (}\DecValTok{1} \OperatorTok{-}\NormalTok{ t) }\OperatorTok{+} \VariableTok{p3}\NormalTok{.}\AttributeTok{x} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{3}\NormalTok{)}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ y }\OperatorTok{=} \VariableTok{p0}\NormalTok{.}\AttributeTok{y} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{3}\NormalTok{) }\OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p1}\NormalTok{.}\AttributeTok{y} \OperatorTok{*}\NormalTok{ t }\OperatorTok{*} \AttributeTok{pow}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\NormalTok{ t}\OperatorTok{,} \DecValTok{2}\NormalTok{)}
+    \OperatorTok{+} \DecValTok{3} \OperatorTok{*} \VariableTok{p2}\NormalTok{.}\AttributeTok{y} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ (}\DecValTok{1} \OperatorTok{-}\NormalTok{ t) }\OperatorTok{+} \VariableTok{p3}\NormalTok{.}\AttributeTok{y} \OperatorTok{*} \AttributeTok{pow}\NormalTok{(t}\OperatorTok{,} \DecValTok{3}\NormalTok{)}\OperatorTok{;}
+  \ControlFlowTok{return} \KeywordTok{new} \AttributeTok{Complex}\NormalTok{(x}\OperatorTok{,}\NormalTok{ y)}\OperatorTok{;}
+\OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -407,23 +407,23 @@ e infine \textbf{campionare \(N\) punti} lungo la \emph{polybézier}, \textbf{di
 \begin{Shaded}
 \begin{Highlighting}[]
 \AttributeTok{samplePoints}\NormalTok{(N) }\OperatorTok{\{}
-        \KeywordTok{let}\NormalTok{ s }\OperatorTok{=} \FloatTok{1.000000} \OperatorTok{/}\NormalTok{ N}\OperatorTok{;}
-        \KeywordTok{let}\NormalTok{ M }\OperatorTok{=} \KeywordTok{this}\NormalTok{.}\VariableTok{points}\NormalTok{.}\AttributeTok{length} \OperatorTok{/} \DecValTok{3}\OperatorTok{;}
-        \KeywordTok{let}\NormalTok{ sampledPoints }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}
-
-        \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ j }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ j }\OperatorTok{<}\NormalTok{ M}\OperatorTok{;}\NormalTok{ j}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
-            \KeywordTok{let}\NormalTok{ points }\OperatorTok{=} \OperatorTok{\{}
-                \DataTypeTok{p0}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[}\DecValTok{3} \OperatorTok{*}\NormalTok{ j]}\OperatorTok{,} \DataTypeTok{p1}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[}\DecValTok{1} \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ j]}\OperatorTok{,}
-                \DataTypeTok{p2}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[}\DecValTok{2} \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ j]}\OperatorTok{,} \DataTypeTok{p3}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[(}\DecValTok{3} \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ j) }\OperatorTok{%} \KeywordTok{this}\NormalTok{.}\VariableTok{points}\NormalTok{.}\AttributeTok{length}\NormalTok{]}
-            \OperatorTok{\};}
-            \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ k }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ k}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
-\NormalTok{                sampledPoints[k }\OperatorTok{+}\NormalTok{ j }\OperatorTok{*}\NormalTok{ N] }\OperatorTok{=} \KeywordTok{this}\NormalTok{.}\AttributeTok{getPoint}\NormalTok{(}\VariableTok{points}\NormalTok{.}\AttributeTok{p0}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p1}\OperatorTok{,}
-                    \VariableTok{points}\NormalTok{.}\AttributeTok{p2}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p3}\OperatorTok{,}\NormalTok{ k }\OperatorTok{*}\NormalTok{ s)}\OperatorTok{;}
-            \OperatorTok{\}}
-        \OperatorTok{\}}
-
-        \ControlFlowTok{return}\NormalTok{ sampledPoints}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ s }\OperatorTok{=} \FloatTok{1.000000} \OperatorTok{/}\NormalTok{ N}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ M }\OperatorTok{=} \KeywordTok{this}\NormalTok{.}\VariableTok{points}\NormalTok{.}\AttributeTok{length} \OperatorTok{/} \DecValTok{3}\OperatorTok{;}
+  \KeywordTok{let}\NormalTok{ sampledPoints }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}
+  
+  \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ j }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ j }\OperatorTok{<}\NormalTok{ M}\OperatorTok{;}\NormalTok{ j}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
+    \KeywordTok{let}\NormalTok{ points }\OperatorTok{=} \OperatorTok{\{}
+      \DataTypeTok{p0}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[}\DecValTok{3} \OperatorTok{*}\NormalTok{ j]}\OperatorTok{,} \DataTypeTok{p1}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[}\DecValTok{1} \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ j]}\OperatorTok{,}
+      \DataTypeTok{p2}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[}\DecValTok{2} \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ j]}\OperatorTok{,} \DataTypeTok{p3}\OperatorTok{:} \KeywordTok{this}\NormalTok{.}\AttributeTok{points}\NormalTok{[(}\DecValTok{3} \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ j)}
+        \OperatorTok{%} \KeywordTok{this}\NormalTok{.}\VariableTok{points}\NormalTok{.}\AttributeTok{length}\NormalTok{]}
+    \OperatorTok{\};}
+    \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ k }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ k}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
+\NormalTok{      sampledPoints[k }\OperatorTok{+}\NormalTok{ j }\OperatorTok{*}\NormalTok{ N] }\OperatorTok{=} \KeywordTok{this}\NormalTok{.}\AttributeTok{getPoint}\NormalTok{(}\VariableTok{points}\NormalTok{.}\AttributeTok{p0}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p1}\OperatorTok{,}
+          \VariableTok{points}\NormalTok{.}\AttributeTok{p2}\OperatorTok{,} \VariableTok{points}\NormalTok{.}\AttributeTok{p3}\OperatorTok{,}\NormalTok{ k }\OperatorTok{*}\NormalTok{ s)}\OperatorTok{;}
     \OperatorTok{\}}
+  \OperatorTok{\}}
+  \ControlFlowTok{return}\NormalTok{ sampledPoints}\OperatorTok{;}
+\OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -453,24 +453,26 @@ Tradotto in termini informatici, la \href{}{funzione responsabile} del computo d
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{function} \AttributeTok{dft}\NormalTok{(y) }\OperatorTok{\{}
-    \KeywordTok{const}\NormalTok{ Y }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}
-    \KeywordTok{const}\NormalTok{ N }\OperatorTok{=} \VariableTok{y}\NormalTok{.}\AttributeTok{length}\OperatorTok{;}
-
-    \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ n }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ n }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ n}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
-        \KeywordTok{let}\NormalTok{ sum }\OperatorTok{=} \KeywordTok{new} \AttributeTok{Complex}\NormalTok{(}\DecValTok{0}\OperatorTok{,} \DecValTok{0}\NormalTok{)}\OperatorTok{;}
-        \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ k }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ k}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
-            \KeywordTok{const}\NormalTok{ phi }\OperatorTok{=}\NormalTok{ (}\OperatorTok{-}\NormalTok{ TWO_PI }\OperatorTok{*}\NormalTok{ k }\OperatorTok{*}\NormalTok{ n) }\OperatorTok{/}\NormalTok{ N}\OperatorTok{;}
-            \KeywordTok{const}\NormalTok{ c }\OperatorTok{=} \KeywordTok{new} \AttributeTok{Complex}\NormalTok{(}\AttributeTok{cos}\NormalTok{(phi)}\OperatorTok{,} \AttributeTok{sin}\NormalTok{(phi))}\OperatorTok{;}
-            \VariableTok{sum}\NormalTok{.}\AttributeTok{add}\NormalTok{(y[k].}\AttributeTok{mult}\NormalTok{(c))}\OperatorTok{;}
-        \OperatorTok{\}}
-\NormalTok{        sum }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{div}\NormalTok{(N)}\OperatorTok{;}
-
-        \KeywordTok{let}\NormalTok{ freq }\OperatorTok{=}\NormalTok{ n}\OperatorTok{;}
-        \KeywordTok{let}\NormalTok{ amp }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{amp}\NormalTok{()}\OperatorTok{;}
-        \KeywordTok{let}\NormalTok{ phase }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{phase}\NormalTok{()}\OperatorTok{;}
-\NormalTok{        Y[n] }\OperatorTok{=} \OperatorTok{\{} \DataTypeTok{re}\OperatorTok{:} \VariableTok{sum}\NormalTok{.}\AttributeTok{re}\OperatorTok{,} \DataTypeTok{im}\OperatorTok{:} \VariableTok{sum}\NormalTok{.}\AttributeTok{im}\OperatorTok{,}\NormalTok{ freq}\OperatorTok{,}\NormalTok{ amp}\OperatorTok{,}\NormalTok{ phase }\OperatorTok{\};}
+  \KeywordTok{const}\NormalTok{ Y }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}
+  \KeywordTok{const}\NormalTok{ N }\OperatorTok{=} \VariableTok{y}\NormalTok{.}\AttributeTok{length}\OperatorTok{;}
+  
+  \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ n }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ n }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ n}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
+    \KeywordTok{let}\NormalTok{ sum }\OperatorTok{=} \KeywordTok{new} \AttributeTok{Complex}\NormalTok{(}\DecValTok{0}\OperatorTok{,} \DecValTok{0}\NormalTok{)}\OperatorTok{;}
+    \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ k }\OperatorTok{<}\NormalTok{ N}\OperatorTok{;}\NormalTok{ k}\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
+      \KeywordTok{const}\NormalTok{ phi }\OperatorTok{=}\NormalTok{ (}\OperatorTok{-}\NormalTok{ TWO_PI }\OperatorTok{*}\NormalTok{ k }\OperatorTok{*}\NormalTok{ n) }\OperatorTok{/}\NormalTok{ N}\OperatorTok{;}
+      \KeywordTok{const}\NormalTok{ c }\OperatorTok{=} \KeywordTok{new} \AttributeTok{Complex}\NormalTok{(}\AttributeTok{cos}\NormalTok{(phi)}\OperatorTok{,} \AttributeTok{sin}\NormalTok{(phi))}\OperatorTok{;}
+      \VariableTok{sum}\NormalTok{.}\AttributeTok{add}\NormalTok{(y[k].}\AttributeTok{mult}\NormalTok{(c))}\OperatorTok{;}
     \OperatorTok{\}}
-    \ControlFlowTok{return}\NormalTok{ Y}\OperatorTok{;}
+\NormalTok{    sum }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{div}\NormalTok{(N)}\OperatorTok{;}
+
+    \KeywordTok{let}\NormalTok{ freq }\OperatorTok{=}\NormalTok{ n}\OperatorTok{;}
+    \KeywordTok{let}\NormalTok{ amp }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{amp}\NormalTok{()}\OperatorTok{;}
+    \KeywordTok{let}\NormalTok{ phase }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{phase}\NormalTok{()}\OperatorTok{;}
+    
+\NormalTok{    Y[n] }\OperatorTok{=} \OperatorTok{\{} \DataTypeTok{re}\OperatorTok{:} \VariableTok{sum}\NormalTok{.}\AttributeTok{re}\OperatorTok{,} \DataTypeTok{im}\OperatorTok{:} \VariableTok{sum}\NormalTok{.}\AttributeTok{im}\OperatorTok{,}\NormalTok{ freq}\OperatorTok{,}\NormalTok{ amp}\OperatorTok{,}\NormalTok{ phase }\OperatorTok{\};}
+  \OperatorTok{\}}
+  
+  \ControlFlowTok{return}\NormalTok{ Y}\OperatorTok{;}
 \OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -530,9 +532,48 @@ I \textbf{punti} sono quindi \textbf{salvati} in un vettore (\emph{path}) e \tex
 \section{Presentazione}\label{pressoft}}
 
 Come già spiegato in un \protect\hyperlink{presentzione}{precedente capitolo}, le slide sono state create attraverso il \emph{framework} per presentazioni HTML \href{https://revealjs.com/}{\emph{\textbf{Reveal.js}}}, modificato e \textbf{personalizzato} per meglio adattarsi alla \protect\hyperlink{filosofia}{visione artistica} generale del progetto. \emph{Reveal.js} permette di scrivere la presentazione usando il noto linguaggio di \emph{markup} HTML. Questo approccio offre numerosi vantaggi: la \emph{portabilità} del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.
-Inoltre, l'aspetto estetico può essere controllato tramite un apposito \emph{style sheet} CSS in modo rapido e preciso.
+Inoltre, l'aspetto estetico può essere controllato tramite un \href{}{apposito \emph{style sheet} CSS} in modo rapido e preciso.
 
-La scelta è ricaduta su questo approccio per la necessità di integrare fluidamente le animazioni: \emph{Reveal.js} consente infatti di visualizzare pagine web sullo sfondo delle slide: ciò mi ha permesso di collegare i file HTML contententi le animazioni.
+La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare fluidamente} le animazioni: \emph{Reveal.js} consente infatti di visualizzare pagine web sullo sfondo delle slide: ciò mi ha permesso di collegare i file HTML contententi le animazioni.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{<!-- Convergenza -->}
+\KeywordTok{<section}
+\OtherTok{  data-background-iframe=}\StringTok{"https://bradwave.github.io/thesis/animations/s4-animation.html"}
+\OtherTok{	data-preload data-auto-animate}\KeywordTok{>}
+	\KeywordTok{<h4>}\NormalTok{2.2.1 Convergenza dell'approssimazione $ $}\KeywordTok{</h4>}
+	\KeywordTok{<hr>}
+	\KeywordTok{<p}\OtherTok{ style=}\StringTok{"margin-top: -1%;"}\KeywordTok{>}
+\NormalTok{		Cosa succede a $f_N$ per $N \textbackslash{}rightarrow + \textbackslash{}infty$ ?}
+	\KeywordTok{</p>}
+	\KeywordTok{<blockquote}\OtherTok{ class=}\StringTok{"example"}\OtherTok{ style=}\StringTok{"width: 80%; margin-top: 5px;}
+\StringTok{	  margin-bottom: 5px; position: relative;"}\OtherTok{ data-id=}\StringTok{"block"}\KeywordTok{>}
+		\KeywordTok{<div}\OtherTok{ class=}\StringTok{"fragment fade-down"}\OtherTok{ data-fragment-index=}\StringTok{"2"}
+\OtherTok{			style=}\StringTok{"position: absolute;}
+\StringTok{			  margin-left: auto; margin-right: auto; left: 0; right: 0;"}\KeywordTok{>}
+\NormalTok{			$$ \textbackslash{}text\{approssimata da: \} \textbackslash{} f_N(t)=\textbackslash{}frac\{4\}\{\textbackslash{}pi\} \textbackslash{}left( sin(t) +}
+\NormalTok{			\textbackslash{}frac\{1\}\{3\}sin(3t) +}
+\NormalTok{			\textbackslash{}frac\{1\}\{3\}sin(5t) + ...}
+\NormalTok{			\textbackslash{}right) $$}
+		\KeywordTok{</div>}
+		\KeywordTok{<div}\OtherTok{ class=}\StringTok{"fragment fade-down"}\OtherTok{ data-fragment-index=}\StringTok{"1"}\KeywordTok{>}
+			\KeywordTok{<div}\OtherTok{ class=}\StringTok{"fragment fade-out"}\OtherTok{ data-fragment-index=}\StringTok{"2"}
+\OtherTok{				style=}\StringTok{"position: relative;}
+\StringTok{				margin-left: auto; margin-right: auto; left: 0; right: 0;"}\KeywordTok{>}
+\NormalTok{				$$ \textbackslash{}textit\{Esempio: \} \textbackslash{} f(t) =}
+\NormalTok{				\textbackslash{}begin\{cases\}}
+\NormalTok{				+1, }\ErrorTok{&}\NormalTok{ \textbackslash{}text\{se $ \textbackslash{} 0 \textbackslash{}le t \textbackslash{}lt \textbackslash{}pi $\} \textbackslash{}\textbackslash{}}
+\NormalTok{				-1, }\ErrorTok{&}\NormalTok{ \textbackslash{}text\{se $ \textbackslash{} \textbackslash{}pi \textbackslash{}le t \textbackslash{}lt 2 \textbackslash{}pi $\}}
+\NormalTok{				\textbackslash{}end\{cases\} $$}
+			\KeywordTok{</div>}
+		\KeywordTok{</div>}
+	\KeywordTok{</blockquote>}
+\KeywordTok{</section>}
+\end{Highlighting}
+\end{Shaded}
+
+Come visibile in questo esempio\ldots{}
 
 Le formule matematiche vengono visualizzate grazie al \emph{display engine} \href{https://www.mathjax.org/}{\emph{\textbf{MathJax}}}.
 
