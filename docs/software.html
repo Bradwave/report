@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="commento.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="bibliografia.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -157,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#pressoft"><i class="fa fa-check"></i><b>3.2</b> Presentazione</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Pubblicato con bookdown</a></li>
 
@@ -289,14 +289,14 @@ Si assume inoltre che la serie di Fourier converga puntualmente a <span class="m
 <span id="cb5-15"><a href="software.html#cb5-15"></a>    <span class="kw">let</span> amp <span class="op">=</span> <span class="va">sum</span>.<span class="at">amp</span>()<span class="op">;</span></span>
 <span id="cb5-16"><a href="software.html#cb5-16"></a>    <span class="kw">let</span> phase <span class="op">=</span> <span class="va">sum</span>.<span class="at">phase</span>()<span class="op">;</span></span>
 <span id="cb5-17"><a href="software.html#cb5-17"></a>    </span>
-<span id="cb5-18"><a href="software.html#cb5-18"></a>    Y[n] <span class="op">=</span> <span class="op">{</span> <span class="dt">re</span><span class="op">:</span> <span class="va">sum</span>.<span class="at">re</span><span class="op">,</span> <span class="dt">im</span><span class="op">:</span> <span class="va">sum</span>.<span class="at">im</span><span class="op">,</span> freq<span class="op">,</span> amp<span class="op">,</span> phase <span class="op">};</span></span>
+<span id="cb5-18"><a href="software.html#cb5-18"></a>    Y[n] <span class="op">=</span> <span class="op">{</span> freq<span class="op">,</span> amp<span class="op">,</span> phase <span class="op">};</span></span>
 <span id="cb5-19"><a href="software.html#cb5-19"></a>  <span class="op">}</span></span>
 <span id="cb5-20"><a href="software.html#cb5-20"></a>  </span>
 <span id="cb5-21"><a href="software.html#cb5-21"></a>  <span class="cf">return</span> Y<span class="op">;</span></span>
 <span id="cb5-22"><a href="software.html#cb5-22"></a><span class="op">}</span></span></code></pre></div>
 <p>Applicando questo risultato ad una <a href="software.html#polbezier"><em>polybézier</em></a> chiusa e composta da <span class="math inline">\(M\)</span> curve di Bézier cubiche <span class="math inline">\(\mathbf{B}^j(t), \ t \in [0,1], \ j=0,...,M-1\)</span>, si ottiene:</p>
 <p><span class="math display" id="eq:beziercoeff">\[\begin{equation}
-    c&#39;_n=\frac{1}{M\cdot N&#39;}\sum_{j=0}^{M-1}\sum_{k=0}^{N&#39;-1}\mathbf{B}^{j}\bigg(\frac{k}{N&#39;}\bigg)e^{-2\pi in\frac{\text j\cdot N&#39;+ k}{M\cdot N}}
+    c&#39;_n=\frac{1}{M\cdot N&#39;}\sum_{j=0}^{M-1}\sum_{k=0}^{N&#39;-1}\mathbf{B}^{j}\bigg(\frac{k}{N&#39;}\bigg)e^{-2\pi in \textstyle \frac{j\cdot N&#39;+ k}{M\cdot N}}
     \tag{3.3}
 \end{equation}\]</span></p>
 <p>dove <span class="math inline">\(N&#39;\)</span> è il numero di punti campionati per ogni curva di Bézier che compone la <em>polybébezier</em>.</p>
@@ -324,8 +324,9 @@ Si assume inoltre che la serie di Fourier converga puntualmente a <span class="m
 <span id="cb6-18"><a href="software.html#cb6-18"></a>    <span class="at">ellipse</span>(prevx<span class="op">,</span> prevy<span class="op">,</span> radius <span class="op">*</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb6-19"><a href="software.html#cb6-19"></a>    <span class="at">line</span>(prevx<span class="op">,</span> prevy<span class="op">,</span> x<span class="op">,</span> y)<span class="op">;</span></span>
 <span id="cb6-20"><a href="software.html#cb6-20"></a>  <span class="op">}</span></span>
-<span id="cb6-21"><a href="software.html#cb6-21"></a>  <span class="cf">return</span> <span class="at">createVector</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
-<span id="cb6-22"><a href="software.html#cb6-22"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb6-21"><a href="software.html#cb6-21"></a>  </span>
+<span id="cb6-22"><a href="software.html#cb6-22"></a>  <span class="cf">return</span> <span class="at">createVector</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
+<span id="cb6-23"><a href="software.html#cb6-23"></a><span class="op">}</span></span></code></pre></div>
 <p>I <strong>punti</strong> sono quindi <strong>salvati</strong> in un vettore (<em>path</em>) e <strong>uniti</strong> per formare il percorso:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="software.html#cb7-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">path</span>.<span class="at">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">++</span>) <span class="op">{</span></span>
 <span id="cb7-2"><a href="software.html#cb7-2"></a>  <span class="at">line</span>(path[i].<span class="at">x</span><span class="op">,</span> path[i].<span class="at">y</span><span class="op">,</span> path[i<span class="op">+</span><span class="dv">1</span>].<span class="at">x</span><span class="op">,</span> path[i<span class="op">+</span><span class="dv">1</span>].<span class="at">y</span>)<span class="op">;</span></span>
@@ -370,8 +371,9 @@ Inoltre, l’aspetto estetico può essere controllato tramite un <a href="">appo
 <span id="cb8-30"><a href="software.html#cb8-30"></a>		<span class="kw">&lt;/div&gt;</span></span>
 <span id="cb8-31"><a href="software.html#cb8-31"></a>	<span class="kw">&lt;/blockquote&gt;</span></span>
 <span id="cb8-32"><a href="software.html#cb8-32"></a><span class="kw">&lt;/section&gt;</span></span></code></pre></div>
-<p>Come visibile in questo esempio…</p>
+<p>Come visibile in questo esempio, l’attributo <em>data-background-iframe</em> definisce il link all’animzione; il titolo della slide è contenuto in un <em>header</em>, il testo nei paragrafi e il <em>blockquote</em> racchiude invece il testo dell’esempio. La classe <em>fragment</em> consente invece la comparsa graduale degli elementi.</p>
 <p>Le formule matematiche vengono visualizzate grazie al <em>display engine</em> <a href="https://www.mathjax.org/"><em><strong>MathJax</strong></em></a>.</p>
+<p><br></p>
 
 </div>
 </div>
@@ -381,7 +383,7 @@ Inoltre, l’aspetto estetico può essere controllato tramite un <a href="">appo
         </div>
       </div>
 <a href="commento.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

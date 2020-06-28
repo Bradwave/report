@@ -113,7 +113,7 @@
 
 \title{Relazione di tesi: La serie di Fourier e una sua applicazione alla grafica}
 \author{Matteo Bramardi, candidato \and Prof.~Paolo Boggiatto, relatore}
-\date{27 giugno 2020}
+\date{28 giugno 2020}
 
 \begin{document}
 \maketitle
@@ -222,8 +222,8 @@ Seguono immediatamente \textbf{due animazioni} per visualizzare un polinomio tri
 \begin{itemize}
 \tightlist
 \item
-  Nella \href{https://bradwave.github.io/thesis/animations/s2-animation.html}{prima} è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - \textbf{costruire progressivamente} un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.
-  Il primo elemento visibile è il coefficiente \(c_0\), ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso \(c_n\) moltiplicato per \(e_n(t)=e^{2\pi in\frac{t}{a}}\) ovvero la curva chiusa complessa con supporto la \emph{circonferenza unitaria}, percorsa con frequenza \(n\). Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, \(c_n \cdot e_n(t)\) rappresenta la curva chiusa con supporto una circonferenza di \emph{raggio} \(|c_n|\) e una \emph{fase} \(arg(c_n)=\theta_n\) ( dove \(c_n=r_{n}e^{i\theta_n}\)) rispetto alla curva \(|c_n| \cdot e_n(t)\).
+  Nella \href{https://bradwave.github.io/thesis/\#/animazione-polinomi-trigonometrici}{prima} è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - \textbf{costruire progressivamente} un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.
+  Il primo elemento visibile è il coefficiente \(c_0\), ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso \(c_n\) moltiplicato per \(e_n(t)=e^{2\pi in\frac{t}{a}}\) ovvero la curva chiusa complessa con supporto la \emph{circonferenza unitaria}, percorsa con frequenza \(n\). Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, \(c_n \cdot e_n(t)\) rappresenta la curva chiusa con supporto una circonferenza di \emph{raggio} \(|c_n|\) e una \emph{fase} \(arg(c_n)=\theta_n\) (dove \(c_n=r_{n}e^{i\theta_n}\)) rispetto alla curva \(|c_n| \cdot e_n(t)\).
   Le varie componenti del tipo \(c_n \cdot e_n(t)\) possono essere sommate con la definizione usuale di somma in campo complesso, ottenendo una curva che rappresenta proprio il polinomio trigonometrico.
 \end{itemize}
 
@@ -232,7 +232,7 @@ Seguono immediatamente \textbf{due animazioni} per visualizzare un polinomio tri
 \begin{itemize}
 \tightlist
 \item
-  Nella \href{https://bradwave.github.io/thesis/animations/s3-animation.html}{seconda animazione} è possibile - sempre tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - rivelare l'asse della variabile \(t\) per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio \(\mathbb{R} \times \mathbb{C}\).
+  Nella \href{https://bradwave.github.io/thesis/\#/animazione-polinomi-trigonometrici-3d}{seconda animazione} è possibile - sempre tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - rivelare l'asse della variabile \(t\) per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio \(\mathbb{R} \times \mathbb{C}\).
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.5\linewidth]{_images/pol-3d} \end{center}
@@ -249,12 +249,12 @@ Da \((p,n)=a\cdot c_n\) ricaviamo quindi la \emph{\textbf{formula di Fourier}}
 Ci poniamo dunque la \textbf{domanda fondamentale}:
 
 \begin{quote}
-se \(f: \mathbb{R} \longrightarrow \mathbb{C} \ \) è una funzione arbitraria di periodo \(a\), possiamo trovare una decomposizione di \(f\) della forma
+\emph{se \(f: \mathbb{R} \longrightarrow \mathbb{C} \ \) è una funzione arbitraria di periodo \(a\), possiamo trovare una decomposizione di \(f\) della forma}
 \begin{equation}
-f(t) = \sum c_n e^{2i \pi n\textstyle \frac{t}{a}} \ ,
+f(t) = \sum c_n e^{2 \pi in\textstyle \frac{t}{a}} \ ,
 \label{eq:domanda}
 \end{equation}
-sotto minime ipotesi su \(f\) ?
+\emph{sotto minime ipotesi su \(f\) ?}
 \end{quote}
 
 \hypertarget{seriefourier}{%
@@ -264,7 +264,7 @@ In un celebre articolo del 1807, \textbf{Joseph Fourier} afferma che la risposta
 
 È possibile ridefinire questa risposta con gli strumenti della matematica moderna.
 Per farlo, introduciamo lo spazio
-\[L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt < -\infty\bigg\}\]
+\[L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt < +\infty\bigg\}\]
 
 che, dotato delle usuali operazioni, è uno \textbf{spazio vettoriale}. Definiamo quindi il \emph{prodotto scalare}
 \[(f,g) = \int_{0}^{a} f(t) \overline{g}(t)dt \ ,\]
@@ -279,37 +279,107 @@ La soluzione è fornita dal seguente teorema:
 \subsubsection*{Teorema}\label{teorema}}
 \addcontentsline{toc}{subsubsection}{Teorema}
 
-Esiste un unico polinomio trigonometrico \(f_N\) in \(T_n\) tale che
+\emph{Esiste un unico polinomio trigonometrico \(f_N\) in \(T_n\) tale che}
 \[ \Vert f - f_N \Vert _{2} = \min_{p \in T_N} \Vert f - p \Vert _{2} \]
-Questo polinomio è dato da
+\emph{Questo polinomio è dato da}
 \begin{equation}
 f_{N}(t)=\sum_{n=-N}^{N} c_{n}e^{2\pi in \textstyle \frac {t}{a}} \ ,
 \label{eq:polsol}
 \end{equation}
-dove
+\emph{dove}
 \begin{equation}
-c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
+c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
 \label{eq:coeffsol}
 \end{equation}
 \end{quote}
 
+Per qualunque \(f \in L_{p}^{2}(0,a) \ \), vale poi la disuguaglianza
+\[ \sum_{n=-\infty}^{\infty} |c_n|^{2} < + \infty \]
+e quindi
+\[ c_n(f) \rightarrow 0 \ \text{ per } \ |n| \rightarrow + \infty \ . \]
+
 Il passaggio successivo consiste nello studio della \textbf{convergenza}.
-Grazie ad un \href{https://bradwave.github.io/thesis/animations/s4-animation.html}{\textbf{esempio animato}}, è possibile osservare come l'approssimazione, data da una somma di seni, tenda alla funzione \emph{onda quadra}:
+Grazie ad un \href{https://bradwave.github.io/thesis/\#/esempio-animato}{\textbf{esempio animato}}, è possibile osservare come l'approssimazione, data da una somma di seni, tenda alla funzione \emph{onda quadra}:
 
 \begin{itemize}
 \tightlist
 \item
-  è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} - aumentare in numero di addendi nella somma e, quindi, migliorare l'approssimazione.
+  è possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - aumentare in numero di addendi nella somma e, quindi, migliorare l'approssimazione.
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.5\linewidth]{_images/approx} \end{center}
 
 In conclusione, è possibile scrivere:
-\[ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .\]
+
+\begin{equation}
+  f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .
+  \label{eq:sumeq}
+\end{equation}
+
 Si noti che questa è un'equivalenza nella norma di \(L_{p}^{2}(0,a)\) e \textbf{non} significa che, per qualunque valore di \(t\), \(f(t)\) sia uguale alla somma della serie.
 
 \hypertarget{rapprpunt}{%
 \section{Rappresentazione puntuale}\label{rapprpunt}}
+
+Poiché una funzione impiegata in \textbf{computazione numeriche} è necessariamente valutata solo in un \textbf{numero finito} di \textbf{punti}, è importante determinare se la formula \eqref{eq:sumeq} possa esprimere un'equivalenza ad un dato punto \(t\).
+Questo è il problema della \emph{\textbf{convergenza puntuale}}.
+
+Per risolverlo, ci dovremo estendere oltre \(L^2_p(0,a)\).
+
+Dalla caratterizzazione dell'\emph{\textbf{integrale di Lebesgue}}
+\[ f \text{ è Lebesgue-integrabile su } I \ \iff \ \int_{I}|f(t)|dt < +\infty \]
+segue immediatamente che i coefficienti di Fourier esistono se e solo se \(f\) è integrabile su \((a,b)\).
+Introduciamo la notazione
+\[L_{p}^{1}(0,a) = \left\{ f : \mathbb{R} \longrightarrow \mathbb{C} \ : \ f \text{ ha periodo } a  \text{ e } \int_{0}^{a}|f(t)|dt < +\infty \right\} \ .\]
+e notiamo che \(L_p^2(0,a) \subset L_p^1(0,a)\), quindi \(f \in L_p^1(0,a)\) è una condizione meno restrittiva di \(f \in L_p^2(0,a)\).
+
+Al momento non sappiamo se la serie \(\sum_{n=-\infty}^{+\infty}c_n(f)e^{2\pi in\frac{t}{a}}\) converga e, in caso di convergenza, non conosciamo il valore del limite.
+Una \textbf{condizione necessaria} ma non sufficiente è che \[c_n \rightarrow 0 \text{ per } |n| \rightarrow + \infty \ .\]
+Tale condizione è verificata per \(f \in L_p^2(0,a)\) e rimane vera anche per \(f \in L_p^1(0,a)\)
+
+\begin{quote}
+\hypertarget{teorema-di-riemann-lebesgue}{%
+\subsubsection*{Teorema di Riemann-Lebesgue}\label{teorema-di-riemann-lebesgue}}
+\addcontentsline{toc}{subsubsection}{Teorema di Riemann-Lebesgue}
+
+\emph{Sia \((a,b)\) un intervallo limitato e sia \(f\) integrabile su \((a,b)\).}
+\emph{Allora l'integrale}
+\[ I_n = \int_{a}^{b}f(x)e^{2 \pi in x} dx \rightarrow 0 \ \text{ per } \ |n| \rightarrow + \infty \]
+\end{quote}
+
+Un altro importante risultato è riassunto dal \textbf{teorema di Dirichlet}, che mostra come la convergenza della serie di Fourier di \(f\) in un punto \(t_0\) dipende esclusivamente dal \textbf{comportamento} di \(f\) \textbf{in un intorno} di \(t_0\).
+
+\begin{quote}
+\hypertarget{teorema-di-dirichlet}{%
+\subsubsection*{Teorema di Dirichlet}\label{teorema-di-dirichlet}}
+\addcontentsline{toc}{subsubsection}{Teorema di Dirichlet}
+
+\emph{Sia \(f \in L^1_p(0,a)\). Se esistono i limiti \(f(t+)\) e \(f(t-)\) in un punto \(t_0\) ed esistono le derivate destra e sinistra in \(t_0\), allora}
+\[f_N(t_0) \rightarrow \frac{1}{2} \big[ f(t_0+) + f(t_0-) \big] \ \text{ per } \ N \rightarrow +\infty \ .\]
+\emph{Se \(f\) è continua in \(t_0\), \(f_N(t_0) \rightarrow f(t_0)\).}
+\end{quote}
+
+È infine possibile ricavare delle informazioni in merito alla \emph{\textbf{convergenza uniforme}}:
+
+\begin{quote}
+\hypertarget{proposizione}{%
+\subsubsection*{Proposizione}\label{proposizione}}
+\addcontentsline{toc}{subsubsection}{Proposizione}
+
+\emph{Se \(f \in L^2_p(0,a)\) e i suoi coefficienti di Fourier soddisfano}
+\[ \sum_{n=-\infty}^{\infty} |c_n| < + \infty \ ,\]
+\emph{allora \(f\) è uguale q.o. ad una funzione continua \(\tilde f\) e la serie di Fourier di \(f\) converge uniformemente a \(\tilde f\) su \(\mathbb{R}\).}
+\end{quote}
+
+In chiusura, vengono proposte le due animazioni riassuntive che riguardano un \textbf{peculiare esempio}:
+
+\begin{itemize}
+\tightlist
+\item
+  la \href{https://bradwave.github.io/thesis/\#/scomposizione}{prima} mette in evidenza, tramite la scomposizione di \(f(t)\) in \(f(t)=u(t)+iv(t)\), la continuità di \(f\) e la sua appartenenza a \(L^1_p(0,a)\);
+\item
+  la \href{https://bradwave.github.io/thesis/\#/animazione-polinomi-trigonometrici}{seconda}, la \textbf{più importante} di tutta la presentazione, mostra la convergenza puntuale alla funzione \(f\) della sua serie di Fourier. È possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - migliorare l'approssimazione data dalla somma parziale \(N\)-esima della serie di Fourier, facendo variare \(N\). È inoltre visibile, nella parte superiore, lo \textbf{spettro} del segnale periodico \(f\), definito dall'insieme di coppie \((n/a,c_n), \ n \in \mathbb{Z}\) dove \(c_n\) è l'\(n\)-esimo coefficiente di Fourier di \(f\).
+\end{itemize}
 
 \hypertarget{software}{%
 \chapter{Software}\label{software}}
@@ -469,7 +539,7 @@ Tradotto in termini informatici, la \href{}{funzione responsabile} del computo d
     \KeywordTok{let}\NormalTok{ amp }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{amp}\NormalTok{()}\OperatorTok{;}
     \KeywordTok{let}\NormalTok{ phase }\OperatorTok{=} \VariableTok{sum}\NormalTok{.}\AttributeTok{phase}\NormalTok{()}\OperatorTok{;}
     
-\NormalTok{    Y[n] }\OperatorTok{=} \OperatorTok{\{} \DataTypeTok{re}\OperatorTok{:} \VariableTok{sum}\NormalTok{.}\AttributeTok{re}\OperatorTok{,} \DataTypeTok{im}\OperatorTok{:} \VariableTok{sum}\NormalTok{.}\AttributeTok{im}\OperatorTok{,}\NormalTok{ freq}\OperatorTok{,}\NormalTok{ amp}\OperatorTok{,}\NormalTok{ phase }\OperatorTok{\};}
+\NormalTok{    Y[n] }\OperatorTok{=} \OperatorTok{\{}\NormalTok{ freq}\OperatorTok{,}\NormalTok{ amp}\OperatorTok{,}\NormalTok{ phase }\OperatorTok{\};}
   \OperatorTok{\}}
   
   \ControlFlowTok{return}\NormalTok{ Y}\OperatorTok{;}
@@ -480,7 +550,7 @@ Tradotto in termini informatici, la \href{}{funzione responsabile} del computo d
 Applicando questo risultato ad una \protect\hyperlink{polbezier}{\emph{polybézier}} chiusa e composta da \(M\) curve di Bézier cubiche \(\mathbf{B}^j(t), \ t \in [0,1], \ j=0,...,M-1\), si ottiene:
 
 \begin{equation}
-    c'_n=\frac{1}{M\cdot N'}\sum_{j=0}^{M-1}\sum_{k=0}^{N'-1}\mathbf{B}^{j}\bigg(\frac{k}{N'}\bigg)e^{-2\pi in\frac{\text j\cdot N'+ k}{M\cdot N}}
+    c'_n=\frac{1}{M\cdot N'}\sum_{j=0}^{M-1}\sum_{k=0}^{N'-1}\mathbf{B}^{j}\bigg(\frac{k}{N'}\bigg)e^{-2\pi in \textstyle \frac{j\cdot N'+ k}{M\cdot N}}
     \label{eq:beziercoeff}
 \end{equation}
 
@@ -513,6 +583,7 @@ Data la funzione \(f(t)\), ovvero la \emph{polybézier}, e i coefficienti della 
     \AttributeTok{ellipse}\NormalTok{(prevx}\OperatorTok{,}\NormalTok{ prevy}\OperatorTok{,}\NormalTok{ radius }\OperatorTok{*} \DecValTok{2}\NormalTok{)}\OperatorTok{;}
     \AttributeTok{line}\NormalTok{(prevx}\OperatorTok{,}\NormalTok{ prevy}\OperatorTok{,}\NormalTok{ x}\OperatorTok{,}\NormalTok{ y)}\OperatorTok{;}
   \OperatorTok{\}}
+  
   \ControlFlowTok{return} \AttributeTok{createVector}\NormalTok{(x}\OperatorTok{,}\NormalTok{ y)}\OperatorTok{;}
 \OperatorTok{\}}
 \end{Highlighting}
@@ -573,7 +644,7 @@ La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare
 \end{Highlighting}
 \end{Shaded}
 
-Come visibile in questo esempio\ldots{}
+Come visibile in questo esempio, l'attributo \emph{data-background-iframe} definisce il link all'animzione; il titolo della slide è contenuto in un \emph{header}, il testo nei paragrafi e il \emph{blockquote} racchiude invece il testo dell'esempio. La classe \emph{fragment} consente invece la comparsa graduale degli elementi.
 
 Le formule matematiche vengono visualizzate grazie al \emph{display engine} \href{https://www.mathjax.org/}{\emph{\textbf{MathJax}}}.
 

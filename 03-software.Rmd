@@ -152,7 +152,7 @@ function dft(y) {
     let amp = sum.amp();
     let phase = sum.phase();
     
-    Y[n] = { re: sum.re, im: sum.im, freq, amp, phase };
+    Y[n] = { freq, amp, phase };
   }
   
   return Y;
@@ -162,7 +162,7 @@ function dft(y) {
 Applicando questo risultato ad una [_polybézier_](#polbezier) chiusa e composta da $M$ curve di Bézier cubiche $\mathbf{B}^j(t), \ t \in [0,1], \ j=0,...,M-1$, si ottiene:
 
 \begin{equation}
-    c'_n=\frac{1}{M\cdot N'}\sum_{j=0}^{M-1}\sum_{k=0}^{N'-1}\mathbf{B}^{j}\bigg(\frac{k}{N'}\bigg)e^{-2\pi in\frac{\text j\cdot N'+ k}{M\cdot N}}
+    c'_n=\frac{1}{M\cdot N'}\sum_{j=0}^{M-1}\sum_{k=0}^{N'-1}\mathbf{B}^{j}\bigg(\frac{k}{N'}\bigg)e^{-2\pi in \textstyle \frac{j\cdot N'+ k}{M\cdot N}}
     (\#eq:beziercoeff)
 \end{equation}
 
@@ -193,6 +193,7 @@ function epicycles(time) {
     ellipse(prevx, prevy, radius * 2);
     line(prevx, prevy, x, y);
   }
+  
   return createVector(x, y);
 }
 ```
@@ -248,6 +249,8 @@ La scelta è ricaduta su questo approccio per la necessità di **integrare fluid
 	</blockquote>
 </section>
 ```
-Come visibile in questo esempio...
+Come visibile in questo esempio, l'attributo _data-background-iframe_ definisce il link all'animzione; il titolo della slide è contenuto in un _header_, il testo nei paragrafi e il _blockquote_ racchiude invece il testo dell'esempio. La classe _fragment_ consente invece la comparsa graduale degli elementi.
 
 Le formule matematiche vengono visualizzate grazie al _display engine_ [_**MathJax**_](https://www.mathjax.org/).
+
+<br>

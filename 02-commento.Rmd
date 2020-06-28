@@ -25,15 +25,15 @@ dove $a,t \in \mathbb{R}, \ c_n \in \mathbb{C}$. $p(t)$ ha periodo $a$ e grado m
 
 Seguono immediatamente **due animazioni** per visualizzare un polinomio trigonometrico.
 
-* Nella [prima](https://bradwave.github.io/thesis/animations/s2-animation.html) è possibile - tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - **costruire progressivamente** un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.<br>
-Il primo elemento visibile è il coefficiente $c_0$, ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso $c_n$ moltiplicato per $e_n(t)=e^{2\pi in\frac{t}{a}}$ ovvero la curva chiusa complessa con supporto la *circonferenza unitaria*, percorsa con frequenza $n$. Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, $c_n \cdot e_n(t)$ rappresenta la curva chiusa con supporto una circonferenza di _raggio_ $|c_n|$ e una _fase_ $arg(c_n)=\theta_n$ ( dove $c_n=r_{n}e^{i\theta_n}$) rispetto alla curva $|c_n| \cdot e_n(t)$.<br>
+* Nella [prima](https://bradwave.github.io/thesis/#/animazione-polinomi-trigonometrici) è possibile - tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - **costruire progressivamente** un polinomio trigonometrico aumentandone il grado e, di conseguenza, il numero di addendi.<br>
+Il primo elemento visibile è il coefficiente $c_0$, ovvero un numero complesso. Gli altri elementi sono costituiti dal coefficiente complesso $c_n$ moltiplicato per $e_n(t)=e^{2\pi in\frac{t}{a}}$ ovvero la curva chiusa complessa con supporto la *circonferenza unitaria*, percorsa con frequenza $n$. Poiché la moltiplicazione di due numeri complessi può essere interpretata come il multiplo di una rotazione, $c_n \cdot e_n(t)$ rappresenta la curva chiusa con supporto una circonferenza di _raggio_ $|c_n|$ e una _fase_ $arg(c_n)=\theta_n$ (dove $c_n=r_{n}e^{i\theta_n}$) rispetto alla curva $|c_n| \cdot e_n(t)$.<br>
 Le varie componenti del tipo $c_n \cdot e_n(t)$ possono essere sommate con la definizione usuale di somma in campo complesso, ottenendo una curva che rappresenta proprio il polinomio trigonometrico.
 
 ```{r pol-trig, out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics(rep('_images/pol-trig.png'))
 ```
 
-* Nella [seconda animazione](https://bradwave.github.io/thesis/animations/s3-animation.html) è possibile - sempre tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - rivelare l'asse della variabile $t$ per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio $\mathbb{R} \times \mathbb{C}$.
+* Nella [seconda animazione](https://bradwave.github.io/thesis/#/animazione-polinomi-trigonometrici-3d) è possibile - sempre tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - rivelare l'asse della variabile $t$ per mezzo di una rotazione tridimensionale, visualizzando il polinomio trigonometrico nello spazio $\mathbb{R} \times \mathbb{C}$.
 
 ```{r pol-3d, out.width='50%', fig.asp=.50, fig.align='center', echo=FALSE}
 knitr::include_graphics(rep('_images/pol-3d.png'))
@@ -50,12 +50,12 @@ Da $(p,n)=a\cdot c_n$ ricaviamo quindi la _**formula di Fourier**_
 
 Ci poniamo dunque la **domanda fondamentale**:
 
-><i>se $f: \mathbb{R} \longrightarrow \mathbb{C} \ $ è una funzione arbitraria di periodo $a$, possiamo trovare una decomposizione di $f$ della forma</i>
+> _se $f: \mathbb{R} \longrightarrow \mathbb{C} \ $ è una funzione arbitraria di periodo $a$, possiamo trovare una decomposizione di $f$ della forma_
   \begin{equation}
-    f(t) = \sum c_n e^{2i \pi n\textstyle \frac{t}{a}} \ ,
+    f(t) = \sum c_n e^{2 \pi in\textstyle \frac{t}{a}} \ ,
     (\#eq:domanda)
   \end{equation}
-<i>sotto minime ipotesi su $f$ ?</i>
+> _sotto minime ipotesi su $f$ ?_
 
 ## Segnali periodici e serie di Fourier {#seriefourier}
 
@@ -63,7 +63,7 @@ In un celebre articolo del 1807, **Joseph Fourier** afferma che la risposta a ta
 
 È possibile ridefinire questa risposta con gli strumenti della matematica moderna.<br>
 Per farlo, introduciamo lo spazio
-$$L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt < -\infty\bigg\}$$
+$$L_{p}^2(0,a)= \{ f:\mathbb{R} \longrightarrow \mathbb{C} \ : \ f \ \text{ ha periodo } a \text{ e } \int_{0}^{a}|f(t)|^2dt < +\infty\bigg\}$$
 
 che, dotato delle usuali operazioni, è uno **spazio vettoriale**. Definiamo quindi il _prodotto scalare_
 $$(f,g) = \int_{0}^{a} f(t) \overline{g}(t)dt \ ,$$
@@ -74,34 +74,85 @@ Per rispondere alla _domanda fondamentale_ occorre trovare l'elemento $f_N$ nel 
 La soluzione è fornita dal seguente teorema:
 
 > #### Teorema {-}
-><i>Esiste un unico polinomio trigonometrico $f_N$ in $T_n$ tale che</i>
+> _Esiste un unico polinomio trigonometrico $f_N$ in $T_n$ tale che_
 $$ \Vert f - f_N \Vert _{2} = \min_{p \in T_N} \Vert f - p \Vert _{2} $$
-><i>Questo polinomio è dato da</i>
+>_Questo polinomio è dato da_
     \begin{equation}
     f_{N}(t)=\sum_{n=-N}^{N} c_{n}e^{2\pi in \textstyle \frac {t}{a}} \ ,
     (\#eq:polsol)
   \end{equation}
-><i>dove</i>
+>  _dove_
   \begin{equation}
-    c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
+    c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .
     (\#eq:coeffsol)
   \end{equation}
+  
+Per qualunque $f \in L_{p}^{2}(0,a) \ $, vale poi la disuguaglianza
+$$ \sum_{n=-\infty}^{\infty} |c_n|^{2} < + \infty $$
+e quindi
+							$$ c_n(f) \rightarrow 0 \ \text{ per } \ |n| \rightarrow + \infty \ . $$
 
 <br>
 
 Il passaggio successivo consiste nello studio della **convergenza**.<br>
-Grazie ad un [**esempio animato**](https://bradwave.github.io/thesis/animations/s4-animation.html), è possibile osservare come l'approssimazione, data da una somma di seni, tenda alla funzione _onda quadra_:
+Grazie ad un [**esempio animato**](https://bradwave.github.io/thesis/#/esempio-animato), è possibile osservare come l'approssimazione, data da una somma di seni, tenda alla funzione _onda quadra_:
 
-* è possibile - tramite _rotella del mouse_ o _trascinamento verticale_ - aumentare in numero di addendi nella somma e, quindi, migliorare l'approssimazione.
+* è possibile - tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - aumentare in numero di addendi nella somma e, quindi, migliorare l'approssimazione.
 
 ```{r approx, out.width='50%', fig.asp=1, fig.align='center', echo=FALSE}
 knitr::include_graphics(rep('_images/approx.png'))
 ```
 
 In conclusione, è possibile scrivere:
-$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .$$
+
+\begin{equation}
+  f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .
+  (\#eq:sumeq)
+\end{equation}
+
 Si noti che questa è un'equivalenza nella norma di $L_{p}^{2}(0,a)$ e **non** significa che, per qualunque valore di $t$, $f(t)$ sia uguale alla somma della serie.
 
 ## Rappresentazione puntuale {#rapprpunt}
 
+Poiché una funzione impiegata in **computazione numeriche** è necessariamente valutata solo in un **numero finito** di **punti**, è importante determinare se la formula \@ref(eq:sumeq) possa esprimere un'equivalenza ad un dato punto $t$.<br>
+Questo è il problema della _**convergenza puntuale**_.
+
+Per risolverlo, ci dovremo estendere oltre $L^2_p(0,a)$.
+
+Dalla caratterizzazione dell'_**integrale di Lebesgue**_
+$$ f \text{ è Lebesgue-integrabile su } I \ \iff \ \int_{I}|f(t)|dt < +\infty $$
+segue immediatamente che i coefficienti di Fourier esistono se e solo se $f$ è integrabile su $(a,b)$.
+Introduciamo la notazione
+$$L_{p}^{1}(0,a) = \left\{ f : \mathbb{R} \longrightarrow \mathbb{C} \ : \ f \text{ ha periodo } a  \text{ e } \int_{0}^{a}|f(t)|dt < +\infty \right\} \ .$$
+e notiamo che $L_p^2(0,a) \subset L_p^1(0,a)$, quindi $f \in L_p^1(0,a)$ è una condizione meno restrittiva di $f \in L_p^2(0,a)$.
+
+Al momento non sappiamo se la serie $\sum_{n=-\infty}^{+\infty}c_n(f)e^{2\pi in\frac{t}{a}}$ converga e, in caso di convergenza, non conosciamo il valore del limite. <br>
+Una **condizione necessaria** ma non sufficiente è che $$c_n \rightarrow 0 \text{ per } |n| \rightarrow + \infty \ .$$
+Tale condizione è verificata per $f \in L_p^2(0,a)$ e rimane vera anche per $f \in L_p^1(0,a)$
+
+> #### Teorema di Riemann-Lebesgue {-}
+> _Sia $(a,b)$ un intervallo limitato e sia $f$ integrabile su $(a,b)$._
+> _Allora l'integrale_
+$$ I_n = \int_{a}^{b}f(x)e^{2 \pi in x} dx \rightarrow 0 \ \text{ per } \ |n| \rightarrow + \infty $$
+
+Un altro importante risultato è riassunto dal **teorema di Dirichlet**, che mostra come la convergenza della serie di Fourier di $f$ in un punto $t_0$ dipende esclusivamente dal **comportamento** di $f$ **in un intorno** di $t_0$.
+
+> #### Teorema di Dirichlet {-}
+> _Sia $f \in L^1_p(0,a)$. Se esistono i limiti $f(t+)$ e $f(t-)$ in un punto $t_0$<br> ed esistono le derivate destra e sinistra in $t_0$, allora_
+$$f_N(t_0) \rightarrow \frac{1}{2} \big[ f(t_0+) + f(t_0-) \big] \ \text{ per } \ N \rightarrow +\infty \ .$$
+> _Se $f$ è continua in $t_0$, $f_N(t_0) \rightarrow f(t_0)$._
+
+<br>
+È infine possibile ricavare delle informazioni in merito alla _**convergenza uniforme**_:
+
+> #### Proposizione {-}
+> _Se $f \in L^2_p(0,a)$ e i suoi coefficienti di Fourier soddisfano_
+$$ \sum_{n=-\infty}^{\infty} |c_n| < + \infty \ ,$$
+> _allora $f$ è uguale q.o. ad una funzione continua $\tilde f$ e la serie di Fourier di $f$ converge uniformemente a $\tilde f$ su $\mathbb{R}$._
+
+<br>
+In chiusura, vengono proposte le due animazioni riassuntive che riguardano un **peculiare esempio**:
+
+- la [prima](https://bradwave.github.io/thesis/#/scomposizione) mette in evidenza, tramite la scomposizione di $f(t)$ in $f(t)=u(t)+iv(t)$, la continuità di $f$ e la sua appartenenza a $L^1_p(0,a)$;
+- la [seconda](https://bradwave.github.io/thesis/#/animazione-polinomi-trigonometrici), la **più importante** di tutta la presentazione, mostra la convergenza puntuale alla funzione $f$ della sua serie di Fourier. È possibile - tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - migliorare l'approssimazione data dalla somma parziale $N$-esima della serie di Fourier, facendo variare $N$. È inoltre visibile, nella parte superiore, lo **spettro** del segnale periodico $f$, definito dall'insieme di coppie $(n/a,c_n), \ n \in \mathbb{Z}$ dove $c_n$ è l'$n$-esimo coefficiente di Fourier di $f$.
 
