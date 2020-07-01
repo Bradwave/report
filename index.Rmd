@@ -6,17 +6,13 @@ author:
 date: "`r format(Sys.time(), '%d %B %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-nocite: '@*'
 description: "Relazione di tesi"
 ---
 
 # Introduzione {-}
 
 L'idea per l'argomento della tesi nasce dal video [_But what is a Fourier series? From heat flow to circle drawings_](https://www.youtube.com/watch?v=r6sGWTCMz2k) pubblicato su YouTube da Grant Sanderson, noto come [_**3Blue1Brown**_](https://www.youtube.com/c/3blue1brown). Rimasto colpito dal fascino estetico delle animazioni e dalla loro squisita immediatezza, ho deciso di approfondirne i fondamenti teorici.
-
+  
 Il cuore della tesi è la [**presentazione**](https://bradwave.github.io/thesis) che, oltre ad una dissertazione teorica del tema, ripropone le suddette **animazioni**, da me ricreate ed adattate. La presentazione è affinata per agevolarne la comprensione attraverso l'**interazione** con diversi suoi elementi e aspira ad essere un esempio di applicazione delle tecnologie informatiche a fini didattici.
 
 Essa è il risultato di quasi un anno di lavoro e studio personale e concretizza la mia idea di presentare la matematica in modo **coinvolgente** e con l'ausilio di **visualizzazioni grafiche** di forte impatto e semplice interpretazione.

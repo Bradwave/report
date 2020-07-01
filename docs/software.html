@@ -157,7 +157,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#pressoft"><i class="fa fa-check"></i><b>3.2</b> Presentazione</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a><ul>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html#documentazione"><i class="fa fa-check"></i>Documentazioni</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Pubblicato con bookdown</a></li>
 
@@ -227,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="_images/bezier.png" width="36%" style="display: block; margin: auto;" /></p>
 <p>Una <em>polybézier</em> cubica è formata da un numero <span class="math inline">\(M \in \mathbb{N}\)</span> di curve <span class="math inline">\(\mathbf{B}^j(t), \ t \in [0,1], \ j=0,...,M-1\)</span> tali che <span class="math inline">\(\mathbf{B}^j(1)=\mathbf{B}^{j+1}(0)\)</span>. La curva risulterà chiusa se <span class="math inline">\(\mathbf{B}^0(0)=\mathbf{B}^{M-1}(1)\)</span>.<br></p>
 <p><img src="_images/polybezier.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Ho disegnato le curve con <a href="https://inkscape.org/"><em><strong>Inkscape</strong></em></a>, un editor grafico vettoriale <em>open source</em>. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle <a href="https://github.com/Bradwave/thesis">funzioni <em>JavaScript</em></a> per trasformare una stringa testuale in coordinate numeriche, <strong>trovare le coordinate</strong> di un punto <span class="math inline">\(\mathbf{P}(t)\)</span> giacente sulla curva dato <span class="math inline">\(t\)</span></p>
+<p>Ho disegnato le curve con <a href="https://inkscape.org/"><em><strong>Inkscape</strong></em></a>, un editor grafico vettoriale <em>open source</em>. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle <a href="https://github.com/Bradwave/thesis/blob/master/animations/js/utils/polybezier.js">funzioni <em>JavaScript</em></a> per trasformare una stringa testuale in coordinate numeriche, <strong>trovare le coordinate</strong> di un punto <span class="math inline">\(\mathbf{P}(t)\)</span> giacente sulla curva dato <span class="math inline">\(t\)</span></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="software.html#cb3-1"></a><span class="at">getPoint</span>(p0<span class="op">,</span> p1<span class="op">,</span> p2<span class="op">,</span> p3<span class="op">,</span> t) <span class="op">{</span></span>
 <span id="cb3-2"><a href="software.html#cb3-2"></a>  <span class="kw">let</span> x <span class="op">=</span> <span class="va">p0</span>.<span class="at">x</span> <span class="op">*</span> <span class="at">pow</span>(<span class="dv">1</span> <span class="op">-</span> t<span class="op">,</span> <span class="dv">3</span>) <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> <span class="va">p1</span>.<span class="at">x</span> <span class="op">*</span> t <span class="op">*</span> <span class="at">pow</span>(<span class="dv">1</span> <span class="op">-</span> t<span class="op">,</span> <span class="dv">2</span>)</span>
 <span id="cb3-3"><a href="software.html#cb3-3"></a>    <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> <span class="va">p2</span>.<span class="at">x</span> <span class="op">*</span> <span class="at">pow</span>(t<span class="op">,</span> <span class="dv">2</span>) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> t) <span class="op">+</span> <span class="va">p3</span>.<span class="at">x</span> <span class="op">*</span> <span class="at">pow</span>(t<span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></span>
@@ -271,7 +273,7 @@ Si assume inoltre che la serie di Fourier converga puntualmente a <span class="m
     c&#39;_n=\frac{1}{N}\sum_{k=0}^{N-1}y_{k}e^{-2\pi in\frac{k}{N}}
     \tag{3.2}
 \end{equation}\]</span></p>
-<p>Tradotto in termini informatici, la <a href="">funzione responsabile</a> del computo della trasformata discreta può essere così espressa:</p>
+<p>Tradotto in termini informatici, la <a href="https://github.com/Bradwave/thesis/blob/master/animations/js/utils/fourier.js">funzione responsabile</a> del computo della trasformata discreta può essere così espressa:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="software.html#cb5-1"></a><span class="kw">function</span> <span class="at">dft</span>(y) <span class="op">{</span></span>
 <span id="cb5-2"><a href="software.html#cb5-2"></a>  <span class="kw">const</span> Y <span class="op">=</span> []<span class="op">;</span></span>
 <span id="cb5-3"><a href="software.html#cb5-3"></a>  <span class="kw">const</span> N <span class="op">=</span> <span class="va">y</span>.<span class="at">length</span><span class="op">;</span></span>
@@ -337,7 +339,7 @@ Si assume inoltre che la serie di Fourier converga puntualmente a <span class="m
 <div id="pressoft" class="section level2">
 <h2><span class="header-section-number">3.2</span> Presentazione</h2>
 <p>Come già spiegato in un <a href="#presentzione">precedente capitolo</a>, le slide sono state create attraverso il <em>framework</em> per presentazioni HTML <a href="https://revealjs.com/"><em><strong>Reveal.js</strong></em></a>, modificato e <strong>personalizzato</strong> per meglio adattarsi alla <a href="lavoro.html#filosofia">visione artistica</a> generale del progetto. <em>Reveal.js</em> permette di scrivere la presentazione usando il noto linguaggio di <em>markup</em> HTML. Questo approccio offre numerosi vantaggi: la <em>portabilità</em> del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
-Inoltre, l’aspetto estetico può essere controllato tramite un <a href="">apposito <em>style sheet</em> CSS</a> in modo rapido e preciso.</p>
+Inoltre, l’aspetto estetico può essere controllato tramite un <a href="https://github.com/Bradwave/thesis/blob/master/dist/theme/math.css">apposito <em>style sheet</em> CSS</a> in modo rapido e preciso.</p>
 <p>La scelta è ricaduta su questo approccio per la necessità di <strong>integrare fluidamente</strong> le animazioni. <em>Reveal.js</em> consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="software.html#cb8-1"></a><span class="co">&lt;!-- Convergenza --&gt;</span></span>
 <span id="cb8-2"><a href="software.html#cb8-2"></a><span class="kw">&lt;section</span></span>

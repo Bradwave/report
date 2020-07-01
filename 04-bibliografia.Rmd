@@ -1,0 +1,34 @@
+# Bibliografia {-#bibliografia}
+
+<div style="letter-spacing: 1px;">
+
+1. C. Gasquet e P. Witomksi, _Fourier Analysis and Applications_, 1<sup>a</sup> ed., New York, NY, Springer, 1999.
+2. 3Blue1Brown, [_But what is a Fourier series? From heat flow to circle drawings_](www.youtube.com/watch?v=r6sGWTCMz2k), su [YouTube](https://www.youtube.com), 2019.
+3. Pomax, [_A Primer on Bézier Curves_](https://pomax.github.io/bezierinfo/#polybezier), su [github.com](https://github.com/), accesso nel 2020.
+4. W. Rudin, _Real and Complex Analysis_, Singapore, McGraw Hill Book Co, 1987.
+5. E. Oran Briigham, _The FFT and its Applications_, Englewood Clifs, Prentice-Hall, 1988.
+6. S. W. Smith, _The Scientist and Engineer's Guide to Digital Signal Processing_, California Technical Pub, 1997.
+7. O. Byrne, _The First Six Books of Euclid_, Londra, William Pickering, 1847.
+
+</div>
+
+<br>
+
+### Documentazioni {-#documentazione}
+
+<div style="letter-spacing: 1px;">
+
+8. _p5.js_, su [p5js.org](https://p5js.org)
+9. _reveal.js_, su [revealjs.com](https://revealjs.com)
+10. _Complex.js_, su [github.com/infusion/Complex.js/](https://github.com/infusion/Complex.js)
+11. _MathJax_, su [www.mathjax.org](https://www.mathjax.org/)
+12. [_MathJax basic tutorial and quick reference_](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference), su [math.meta.stackexchange.com/](https://math.meta.stackexchange.com/)
+</div>
+
+<div style="letter-spacing: 1px;">
+
+13. Y. Xie, [_Bookdown: Authoring Books and Technical Documents with R Markdown_](https://bookdown.org/yihui/bookdown/), 2020.
+14. Y. Xie, _Bookdown: Authoring Books and Technical Documents with R Markdown_, Boca Raton, Florida, Chapman e Hall/CRC, 2016
+15. Y. Xie, J. J. Allaire e G. Grolemund, _R markdown: The definitive guide_, Boca Raton, Florida, Chapman e Hall/CRC, 2018.
+
+<div>

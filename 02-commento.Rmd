@@ -153,6 +153,15 @@ $$ \sum_{n=-\infty}^{\infty} |c_n| < + \infty \ ,$$
 <br>
 In chiusura, vengono proposte le due animazioni riassuntive che riguardano un **peculiare esempio**:
 
-- la [prima](https://bradwave.github.io/thesis/#/scomposizione) mette in evidenza, tramite la scomposizione di $f(t)$ in $f(t)=u(t)+iv(t)$, la continuità di $f$ e la sua appartenenza a $L^1_p(0,a)$;
-- la [seconda](https://bradwave.github.io/thesis/#/animazione-polinomi-trigonometrici), la **più importante** di tutta la presentazione, mostra la convergenza puntuale alla funzione $f$ della sua serie di Fourier. È possibile - tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - migliorare l'approssimazione data dalla somma parziale $N$-esima della serie di Fourier, facendo variare $N$. È inoltre visibile, nella parte superiore, lo **spettro** del segnale periodico $f$, definito dall'insieme di coppie $(n/a,c_n), \ n \in \mathbb{Z}$ dove $c_n$ è l'$n$-esimo coefficiente di Fourier di $f$.
+- la [prima](https://bradwave.github.io/thesis/#/serie-di-fourier), la **più importante** di tutta la presentazione, mostra la convergenza puntuale alla funzione $f$ della sua serie di Fourier. È possibile - tramite _rotella del mouse_ o _trascinamento verticale_ su schermo - migliorare l'approssimazione data dalla somma parziale $N$-esima della serie di Fourier, facendo variare $N$. È inoltre visibile, nella parte superiore, lo **spettro** del segnale periodico $f$, definito dall'insieme di coppie $(n/a,c_n), \ n \in \mathbb{Z}$ dove $c_n$ è l'$n$-esimo coefficiente di Fourier di $f$.
+```{r sFourier, out.width='100%', fig.asp=1, fig.align='center', echo=FALSE}
+knitr::include_graphics(rep('_images/serie-fourier.png'))
+```
+- la [seconda](https://bradwave.github.io/thesis/#/scomposizione) mette in evidenza, tramite la scomposizione di $f(t)$ in $f(t)=u(t)+iv(t)$, la continuità di $f$ e la sua appartenenza a $L^1_p(0,a)$;
+```{r decomp, out.width='100%', fig.asp=1, fig.align='center', echo=FALSE}
+knitr::include_graphics(rep('_images/decomp.png'))
+```
+
+<br>
+
 

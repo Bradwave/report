@@ -109,11 +109,11 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage[]{natbib}
-\bibliographystyle{apalike}
+\bibliographystyle{plainnat}
 
 \title{Relazione di tesi: La serie di Fourier e una sua applicazione alla grafica}
 \author{Matteo Bramardi, candidato \and Prof.~Paolo Boggiatto, relatore}
-\date{28 giugno 2020}
+\date{01 luglio 2020}
 
 \begin{document}
 \maketitle
@@ -376,10 +376,18 @@ In chiusura, vengono proposte le due animazioni riassuntive che riguardano un \t
 \begin{itemize}
 \tightlist
 \item
-  la \href{https://bradwave.github.io/thesis/\#/scomposizione}{prima} mette in evidenza, tramite la scomposizione di \(f(t)\) in \(f(t)=u(t)+iv(t)\), la continuità di \(f\) e la sua appartenenza a \(L^1_p(0,a)\);
-\item
-  la \href{https://bradwave.github.io/thesis/\#/animazione-polinomi-trigonometrici}{seconda}, la \textbf{più importante} di tutta la presentazione, mostra la convergenza puntuale alla funzione \(f\) della sua serie di Fourier. È possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - migliorare l'approssimazione data dalla somma parziale \(N\)-esima della serie di Fourier, facendo variare \(N\). È inoltre visibile, nella parte superiore, lo \textbf{spettro} del segnale periodico \(f\), definito dall'insieme di coppie \((n/a,c_n), \ n \in \mathbb{Z}\) dove \(c_n\) è l'\(n\)-esimo coefficiente di Fourier di \(f\).
+  la \href{https://bradwave.github.io/thesis/\#/serie-di-fourier}{prima}, la \textbf{più importante} di tutta la presentazione, mostra la convergenza puntuale alla funzione \(f\) della sua serie di Fourier. È possibile - tramite \emph{rotella del mouse} o \emph{trascinamento verticale} su schermo - migliorare l'approssimazione data dalla somma parziale \(N\)-esima della serie di Fourier, facendo variare \(N\). È inoltre visibile, nella parte superiore, lo \textbf{spettro} del segnale periodico \(f\), definito dall'insieme di coppie \((n/a,c_n), \ n \in \mathbb{Z}\) dove \(c_n\) è l'\(n\)-esimo coefficiente di Fourier di \(f\).
 \end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{_images/serie-fourier} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  la \href{https://bradwave.github.io/thesis/\#/scomposizione}{seconda} mette in evidenza, tramite la scomposizione di \(f(t)\) in \(f(t)=u(t)+iv(t)\), la continuità di \(f\) e la sua appartenenza a \(L^1_p(0,a)\);
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{_images/decomp} \end{center}
 
 \hypertarget{software}{%
 \chapter{Software}\label{software}}
@@ -458,7 +466,7 @@ Una \emph{polybézier} cubica è formata da un numero \(M \in \mathbb{N}\) di cu
 
 \begin{center}\includegraphics[width=0.75\linewidth]{_images/polybezier} \end{center}
 
-Ho disegnato le curve con \href{https://inkscape.org/}{\emph{\textbf{Inkscape}}}, un editor grafico vettoriale \emph{open source}. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle \href{https://github.com/Bradwave/thesis}{funzioni \emph{JavaScript}} per trasformare una stringa testuale in coordinate numeriche, \textbf{trovare le coordinate} di un punto \(\mathbf{P}(t)\) giacente sulla curva dato \(t\)
+Ho disegnato le curve con \href{https://inkscape.org/}{\emph{\textbf{Inkscape}}}, un editor grafico vettoriale \emph{open source}. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle \href{https://github.com/Bradwave/thesis/blob/master/animations/js/utils/polybezier.js}{funzioni \emph{JavaScript}} per trasformare una stringa testuale in coordinate numeriche, \textbf{trovare le coordinate} di un punto \(\mathbf{P}(t)\) giacente sulla curva dato \(t\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -518,7 +526,7 @@ Con la \emph{formula del trapezio}, si ottiene un'\textbf{approssimazione} dei c
     \label{eq:dcoeff}
 \end{equation}
 
-Tradotto in termini informatici, la \href{}{funzione responsabile} del computo della trasformata discreta può essere così espressa:
+Tradotto in termini informatici, la \href{https://github.com/Bradwave/thesis/blob/master/animations/js/utils/fourier.js}{funzione responsabile} del computo della trasformata discreta può essere così espressa:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -603,7 +611,7 @@ I \textbf{punti} sono quindi \textbf{salvati} in un vettore (\emph{path}) e \tex
 \section{Presentazione}\label{pressoft}}
 
 Come già spiegato in un \protect\hyperlink{presentzione}{precedente capitolo}, le slide sono state create attraverso il \emph{framework} per presentazioni HTML \href{https://revealjs.com/}{\emph{\textbf{Reveal.js}}}, modificato e \textbf{personalizzato} per meglio adattarsi alla \protect\hyperlink{filosofia}{visione artistica} generale del progetto. \emph{Reveal.js} permette di scrivere la presentazione usando il noto linguaggio di \emph{markup} HTML. Questo approccio offre numerosi vantaggi: la \emph{portabilità} del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.
-Inoltre, l'aspetto estetico può essere controllato tramite un \href{}{apposito \emph{style sheet} CSS} in modo rapido e preciso.
+Inoltre, l'aspetto estetico può essere controllato tramite un \href{https://github.com/Bradwave/thesis/blob/master/dist/theme/math.css}{apposito \emph{style sheet} CSS} in modo rapido e preciso.
 
 La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare fluidamente} le animazioni. \emph{Reveal.js} consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.
 
@@ -648,6 +656,59 @@ Come visibile in questo esempio, l'attributo \emph{data-background-iframe} defin
 
 Le formule matematiche vengono visualizzate grazie al \emph{display engine} \href{https://www.mathjax.org/}{\emph{\textbf{MathJax}}}.
 
-  \bibliography{book.bib,packages.bib}
+\hypertarget{bibliografia}{%
+\chapter*{Bibliografia}\label{bibliografia}}
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  C. Gasquet e P. Witomksi, \emph{Fourier Analysis and Applications}, 1a ed., New York, NY, Springer, 1999.
+\item
+  3Blue1Brown, \href{www.youtube.com/watch?v=r6sGWTCMz2k}{\emph{But what is a Fourier series? From heat flow to circle drawings}}, su \href{https://www.youtube.com}{YouTube}, 2019.
+\item
+  Pomax, \href{https://pomax.github.io/bezierinfo/\#polybezier}{\emph{A Primer on Bézier Curves}}, su \href{https://github.com/}{github.com}, accesso nel 2020.
+\item
+  W. Rudin, \emph{Real and Complex Analysis}, Singapore, McGraw Hill Book Co, 1987.
+\item
+  E. Oran Briigham, \emph{The FFT and its Applications}, Englewood Clifs, Prentice-Hall, 1988.
+\item
+  S. W. Smith, \emph{The Scientist and Engineer's Guide to Digital Signal Processing}, California Technical Pub, 1997.
+\item
+  O. Byrne, \emph{The First Six Books of Euclid}, Londra, William Pickering, 1847.
+\end{enumerate}
+
+\hypertarget{documentazione}{%
+\subsection*{Documentazioni}\label{documentazione}}
+\addcontentsline{toc}{subsection}{Documentazioni}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  \emph{p5.js}, su \href{https://p5js.org}{p5js.org}
+\item
+  \emph{reveal.js}, su \href{https://revealjs.com}{revealjs.com}
+\item
+  \emph{Complex.js}, su \href{https://github.com/infusion/Complex.js}{github.com/infusion/Complex.js/}
+\item
+  \emph{MathJax}, su \href{https://www.mathjax.org/}{www.mathjax.org}
+\item
+  \href{https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference}{\emph{MathJax basic tutorial and quick reference}}, su \href{https://math.meta.stackexchange.com/}{math.meta.stackexchange.com/}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Y. Xie, \href{https://bookdown.org/yihui/bookdown/}{\emph{Bookdown: Authoring Books and Technical Documents with R Markdown}}, 2020.
+\item
+  Y. Xie, \emph{Bookdown: Authoring Books and Technical Documents with R Markdown}, Boca Raton, Florida, Chapman e Hall/CRC, 2016
+\item
+  Y. Xie, J. J. Allaire e G. Grolemund, \emph{R markdown: The definitive guide}, Boca Raton, Florida, Chapman e Hall/CRC, 2018.
+\end{enumerate}
 
 \end{document}

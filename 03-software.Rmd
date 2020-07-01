@@ -79,7 +79,7 @@ Una _polybézier_ cubica è formata da un numero $M \in \mathbb{N}$ di curve $\m
 knitr::include_graphics(rep('_images/polybezier.png'))
 ```
 
-Ho disegnato le curve con [_**Inkscape**_](https://inkscape.org/), un editor grafico vettoriale _open source_. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle [funzioni _JavaScript_](https://github.com/Bradwave/thesis) per trasformare una stringa testuale in coordinate numeriche, **trovare le coordinate** di un punto $\mathbf{P}(t)$ giacente sulla curva dato $t$
+Ho disegnato le curve con [_**Inkscape**_](https://inkscape.org/), un editor grafico vettoriale _open source_. Il file generato - di formato SVG - può essere aperto con un semplice editor di testo e, al suo interno, ho identificato le coordinate dei punti. Ho poi scritto delle [funzioni _JavaScript_](https://github.com/Bradwave/thesis/blob/master/animations/js/utils/polybezier.js) per trasformare una stringa testuale in coordinate numeriche, **trovare le coordinate** di un punto $\mathbf{P}(t)$ giacente sulla curva dato $t$
 
 ```javascript
 getPoint(p0, p1, p2, p3, t) {
@@ -132,7 +132,7 @@ Con la _formula del trapezio_, si ottiene un'**approssimazione** dei coefficient
     (\#eq:dcoeff)
 \end{equation}
 
-Tradotto in termini informatici, la [funzione responsabile]() del computo della trasformata discreta può essere così espressa:
+Tradotto in termini informatici, la [funzione responsabile](https://github.com/Bradwave/thesis/blob/master/animations/js/utils/fourier.js) del computo della trasformata discreta può essere così espressa:
 
 ```javascript
 function dft(y) {
@@ -211,7 +211,7 @@ for (let i = 0; i < path.length - 1; i ++) {
 ## Presentazione {#pressoft}
 
 Come già spiegato in un [precedente capitolo](#presentzione), le slide sono state create attraverso il _framework_ per presentazioni HTML [_**Reveal.js**_](https://revealjs.com/), modificato e **personalizzato** per meglio adattarsi alla [visione artistica](#filosofia) generale del progetto. _Reveal.js_ permette di scrivere la presentazione usando il noto linguaggio di _markup_ HTML. Questo approccio offre numerosi vantaggi: la _portabilità_ del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
-Inoltre, l'aspetto estetico può essere controllato tramite un [apposito _style sheet_ CSS]() in modo rapido e preciso.
+Inoltre, l'aspetto estetico può essere controllato tramite un [apposito _style sheet_ CSS](https://github.com/Bradwave/thesis/blob/master/dist/theme/math.css) in modo rapido e preciso.
 
 La scelta è ricaduta su questo approccio per la necessità di **integrare fluidamente** le animazioni. _Reveal.js_ consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br>
 
