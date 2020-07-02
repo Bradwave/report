@@ -4,7 +4,7 @@
 
 ## Primi prototipi {#prototipi}
 
-Dopola visione del [video sopracitato](https://www.youtube.com/watch?v=r6sGWTCMz2k) nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in _JavaScript_ seguendo [alcuni tutorial](https://www.youtube.com/watch?v=MY4luNgGfms) di [_The Coding Train_](https://www.youtube.com/thecodingtrain). A dicembre dello stesso anno ho poi riscritto il precedente prototipo in _Java_ e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e con la loro implementazione.
+Dopo la visione del [video sopracitato](https://www.youtube.com/watch?v=r6sGWTCMz2k) nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in _JavaScript_ seguendo [alcuni tutorial](https://www.youtube.com/watch?v=MY4luNgGfms) di [_The Coding Train_](https://www.youtube.com/thecodingtrain). A dicembre dello stesso anno ho poi riscritto il precedente prototipo in _Java_ e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e con la loro implementazione.
 
 <br>
 
