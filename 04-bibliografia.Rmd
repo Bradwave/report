@@ -12,9 +12,7 @@
 
 </div>
 
-<br>
-
-### Documentazioni {-#documentazione}
+#### Documentazioni {-#documentazione}
 
 <div style="letter-spacing: 1px;">
 
