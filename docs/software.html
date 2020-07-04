@@ -328,15 +328,13 @@ Si assume inoltre che la serie di Fourier converga puntualmente a <span class="m
 <span id="cb6-22"><a href="software.html#cb6-22"></a>  <span class="cf">return</span> <span class="at">createVector</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
 <span id="cb6-23"><a href="software.html#cb6-23"></a><span class="op">}</span></span></code></pre></div>
 <p>I <strong>punti</strong> sono quindi <strong>salvati</strong> in un vettore (<em>path</em>) e <strong>uniti</strong> per formare il percorso:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="software.html#cb7-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">path</span>.<span class="at">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">++</span>) <span class="op">{</span></span>
-<span id="cb7-2"><a href="software.html#cb7-2"></a>  <span class="at">line</span>(path[i].<span class="at">x</span><span class="op">,</span> path[i].<span class="at">y</span><span class="op">,</span> path[i<span class="op">+</span><span class="dv">1</span>].<span class="at">x</span><span class="op">,</span> path[i<span class="op">+</span><span class="dv">1</span>].<span class="at">y</span>)<span class="op">;</span></span>
-<span id="cb7-3"><a href="software.html#cb7-3"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="software.html#cb7-1"></a>    </span></code></pre></div>
 <p><br></p>
 </div>
 </div>
 <div id="pressoft" class="section level2">
 <h2><span class="header-section-number">3.2</span> Presentazione</h2>
-<p>Come già spiegato in un <a href="#presentzione">precedente capitolo</a>, le slide sono state create attraverso il <em>framework</em> per presentazioni HTML <a href="https://revealjs.com/"><em><strong>Reveal.js</strong></em></a>, modificato e <strong>personalizzato</strong> per meglio adattarsi alla <a href="lavoro.html#filosofia">visione artistica</a> generale del progetto. <em>Reveal.js</em> permette di scrivere la presentazione usando il noto linguaggio di <em>markup</em> HTML. Questo approccio offre numerosi vantaggi: la <em>portabilità</em> del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
+<p>Come già spiegato in un <a href="lavoro.html#presentazione">precedente capitolo</a>, le slide sono state create attraverso il <em>framework</em> per presentazioni HTML <a href="https://revealjs.com/"><em><strong>Reveal.js</strong></em></a>, modificato e <strong>personalizzato</strong> per meglio adattarsi alla <a href="lavoro.html#filosofia">visione artistica</a> generale del progetto. <em>Reveal.js</em> permette di scrivere la presentazione usando il noto linguaggio di <em>markup</em> HTML. Questo approccio offre numerosi vantaggi: la <em>portabilità</em> del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
 Inoltre, l’aspetto estetico può essere controllato tramite un <a href="https://github.com/Bradwave/thesis/blob/master/dist/theme/math.css">apposito <em>style sheet</em> CSS</a> in modo rapido e preciso.</p>
 <p>La scelta è ricaduta su questo approccio per la necessità di <strong>integrare fluidamente</strong> le animazioni. <em>Reveal.js</em> consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="software.html#cb8-1"></a><span class="co">&lt;!-- Convergenza --&gt;</span></span>
@@ -345,32 +343,13 @@ Inoltre, l’aspetto estetico può essere controllato tramite un <a href="https:
 <span id="cb8-4"><a href="software.html#cb8-4"></a><span class="ot">	data-preload data-auto-animate</span><span class="kw">&gt;</span></span>
 <span id="cb8-5"><a href="software.html#cb8-5"></a>	<span class="kw">&lt;h4&gt;</span>2.2.1 Convergenza dell&#39;approssimazione $ $<span class="kw">&lt;/h4&gt;</span></span>
 <span id="cb8-6"><a href="software.html#cb8-6"></a>	<span class="kw">&lt;hr&gt;</span></span>
-<span id="cb8-7"><a href="software.html#cb8-7"></a>	<span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;margin-top: -1%;&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-7"><a href="software.html#cb8-7"></a>	<span class="kw">&lt;p&gt;</span></span>
 <span id="cb8-8"><a href="software.html#cb8-8"></a>		Cosa succede a $f_N$ per $N \rightarrow + \infty$ ?</span>
 <span id="cb8-9"><a href="software.html#cb8-9"></a>	<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb8-10"><a href="software.html#cb8-10"></a>	<span class="kw">&lt;blockquote</span><span class="ot"> class=</span><span class="st">&quot;example&quot;</span><span class="ot"> style=</span><span class="st">&quot;width: 80%; margin-top: 5px;</span></span>
-<span id="cb8-11"><a href="software.html#cb8-11"></a><span class="st">	  margin-bottom: 5px; position: relative;&quot;</span><span class="ot"> data-id=</span><span class="st">&quot;block&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-12"><a href="software.html#cb8-12"></a>		<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;fragment fade-down&quot;</span><span class="ot"> data-fragment-index=</span><span class="st">&quot;2&quot;</span></span>
-<span id="cb8-13"><a href="software.html#cb8-13"></a><span class="ot">			style=</span><span class="st">&quot;position: absolute;</span></span>
-<span id="cb8-14"><a href="software.html#cb8-14"></a><span class="st">			  margin-left: auto; margin-right: auto; left: 0; right: 0;&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-15"><a href="software.html#cb8-15"></a>			$$ \text{approssimata da: } \ f_N(t)=\frac{4}{\pi} \left( sin(t) +</span>
-<span id="cb8-16"><a href="software.html#cb8-16"></a>			\frac{1}{3}sin(3t) +</span>
-<span id="cb8-17"><a href="software.html#cb8-17"></a>			\frac{1}{3}sin(5t) + ...</span>
-<span id="cb8-18"><a href="software.html#cb8-18"></a>			\right) $$</span>
-<span id="cb8-19"><a href="software.html#cb8-19"></a>		<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb8-20"><a href="software.html#cb8-20"></a>		<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;fragment fade-down&quot;</span><span class="ot"> data-fragment-index=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-21"><a href="software.html#cb8-21"></a>			<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;fragment fade-out&quot;</span><span class="ot"> data-fragment-index=</span><span class="st">&quot;2&quot;</span></span>
-<span id="cb8-22"><a href="software.html#cb8-22"></a><span class="ot">				style=</span><span class="st">&quot;position: relative;</span></span>
-<span id="cb8-23"><a href="software.html#cb8-23"></a><span class="st">				margin-left: auto; margin-right: auto; left: 0; right: 0;&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-24"><a href="software.html#cb8-24"></a>				$$ \textit{Esempio: } \ f(t) =</span>
-<span id="cb8-25"><a href="software.html#cb8-25"></a>				\begin{cases}</span>
-<span id="cb8-26"><a href="software.html#cb8-26"></a>				+1, <span class="er">&amp;</span> \text{se $ \ 0 \le t \lt \pi $} \\</span>
-<span id="cb8-27"><a href="software.html#cb8-27"></a>				-1, <span class="er">&amp;</span> \text{se $ \ \pi \le t \lt 2 \pi $}</span>
-<span id="cb8-28"><a href="software.html#cb8-28"></a>				\end{cases} $$</span>
-<span id="cb8-29"><a href="software.html#cb8-29"></a>			<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb8-30"><a href="software.html#cb8-30"></a>		<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb8-31"><a href="software.html#cb8-31"></a>	<span class="kw">&lt;/blockquote&gt;</span></span>
-<span id="cb8-32"><a href="software.html#cb8-32"></a><span class="kw">&lt;/section&gt;</span></span></code></pre></div>
+<span id="cb8-10"><a href="software.html#cb8-10"></a>	</span>
+<span id="cb8-11"><a href="software.html#cb8-11"></a>	...</span>
+<span id="cb8-12"><a href="software.html#cb8-12"></a>	</span>
+<span id="cb8-13"><a href="software.html#cb8-13"></a><span class="kw">&lt;/section&gt;</span></span></code></pre></div>
 <p>Come visibile in questo esempio, l’attributo <em>data-background-iframe</em> definisce il link all’animzione; il titolo della slide è contenuto in un <em>header</em>, il testo nei paragrafi e il <em>blockquote</em> racchiude invece il testo dell’esempio. La classe <em>fragment</em> consente invece la comparsa graduale degli elementi.</p>
 <p>Le formule matematiche vengono visualizzate grazie al <em>display engine</em> <a href="https://www.mathjax.org/"><em><strong>MathJax</strong></em></a>.</p>
 <p><br></p>

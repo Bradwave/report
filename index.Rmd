@@ -3,7 +3,7 @@ title: "<small>Relazione di tesi: </small><br><big><i>La serie di Fourier </i></
 author:
   - <big>Matteo Bramardi</big>, candidato
   - <big>Prof. Paolo Boggiatto</big>, relatore
-date: "`r format(Sys.time(), '%d %B %Y')`"
+date: "A.A. 2019/2020"
 site: bookdown::bookdown_site
 documentclass: book
 description: "Relazione di tesi"

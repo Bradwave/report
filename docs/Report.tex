@@ -1,4 +1,4 @@
- % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
@@ -113,7 +113,7 @@
 
 \title{Relazione di tesi: La serie di Fourier e una sua applicazione alla grafica}
 \author{Matteo Bramardi, candidato \and Prof.~Paolo Boggiatto, relatore}
-\date{02 luglio 2020}
+\date{A.A. 2019/2020}
 
 \begin{document}
 \maketitle
@@ -138,7 +138,7 @@ Essa è il risultato di quasi un anno di lavoro e studio personale e concretizza
 \hypertarget{prototipi}{%
 \section{Primi prototipi}\label{prototipi}}
 
-Dopola visione del \href{https://www.youtube.com/watch?v=r6sGWTCMz2k}{video sopracitato} nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in \emph{JavaScript} seguendo \href{https://www.youtube.com/watch?v=MY4luNgGfms}{alcuni tutorial} di \href{https://www.youtube.com/thecodingtrain}{\emph{The Coding Train}}. A dicembre dello stesso anno ho poi riscritto il precedente prototipo in \emph{Java} e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e con la loro implementazione.
+Dopo la visione del \href{https://www.youtube.com/watch?v=r6sGWTCMz2k}{video sopracitato} nel mese di luglio 2019, ho realizzato il primo prototipo dell'animazione principale in \emph{JavaScript} seguendo \href{https://www.youtube.com/watch?v=MY4luNgGfms}{alcuni tutorial} di \href{https://www.youtube.com/thecodingtrain}{\emph{The Coding Train}}. A dicembre dello stesso anno ho poi riscritto il precedente prototipo in \emph{Java} e ne ho ampliato le funzionalità. Ciò mi ha permesso di familiarizzare con i vari algoritmi impiegati nella generazione delle informazioni utili alla visualizzazione dell'animazione e con la loro implementazione.
 
 \hypertarget{ricerca}{%
 \section{Ricerca teorica}\label{ricerca}}
@@ -601,16 +601,14 @@ I \textbf{punti} sono quindi \textbf{salvati} in un vettore (\emph{path}) e \tex
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ i }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ i }\OperatorTok{<} \VariableTok{path}\NormalTok{.}\AttributeTok{length} \OperatorTok{-} \DecValTok{1}\OperatorTok{;}\NormalTok{ i }\OperatorTok{++}\NormalTok{) }\OperatorTok{\{}
-  \AttributeTok{line}\NormalTok{(path[i].}\AttributeTok{x}\OperatorTok{,}\NormalTok{ path[i].}\AttributeTok{y}\OperatorTok{,}\NormalTok{ path[i}\OperatorTok{+}\DecValTok{1}\NormalTok{].}\AttributeTok{x}\OperatorTok{,}\NormalTok{ path[i}\OperatorTok{+}\DecValTok{1}\NormalTok{].}\AttributeTok{y}\NormalTok{)}\OperatorTok{;}
-\OperatorTok{\}}
+    
 \end{Highlighting}
 \end{Shaded}
 
 \hypertarget{pressoft}{%
 \section{Presentazione}\label{pressoft}}
 
-Come già spiegato in un \protect\hyperlink{presentzione}{precedente capitolo}, le slide sono state create attraverso il \emph{framework} per presentazioni HTML \href{https://revealjs.com/}{\emph{\textbf{Reveal.js}}}, modificato e \textbf{personalizzato} per meglio adattarsi alla \protect\hyperlink{filosofia}{visione artistica} generale del progetto. \emph{Reveal.js} permette di scrivere la presentazione usando il noto linguaggio di \emph{markup} HTML. Questo approccio offre numerosi vantaggi: la \emph{portabilità} del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.
+Come già spiegato in un \protect\hyperlink{presentazione}{precedente capitolo}, le slide sono state create attraverso il \emph{framework} per presentazioni HTML \href{https://revealjs.com/}{\emph{\textbf{Reveal.js}}}, modificato e \textbf{personalizzato} per meglio adattarsi alla \protect\hyperlink{filosofia}{visione artistica} generale del progetto. \emph{Reveal.js} permette di scrivere la presentazione usando il noto linguaggio di \emph{markup} HTML. Questo approccio offre numerosi vantaggi: la \emph{portabilità} del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.
 Inoltre, l'aspetto estetico può essere controllato tramite un \href{https://github.com/Bradwave/thesis/blob/master/dist/theme/math.css}{apposito \emph{style sheet} CSS} in modo rapido e preciso.
 
 La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare fluidamente} le animazioni. \emph{Reveal.js} consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.
@@ -623,31 +621,12 @@ La scelta è ricaduta su questo approccio per la necessità di \textbf{integrare
 \OtherTok{	data-preload data-auto-animate}\KeywordTok{>}
 	\KeywordTok{<h4>}\NormalTok{2.2.1 Convergenza dell'approssimazione $ $}\KeywordTok{</h4>}
 	\KeywordTok{<hr>}
-	\KeywordTok{<p}\OtherTok{ style=}\StringTok{"margin-top: -1%;"}\KeywordTok{>}
+	\KeywordTok{<p>}
 \NormalTok{		Cosa succede a $f_N$ per $N \textbackslash{}rightarrow + \textbackslash{}infty$ ?}
 	\KeywordTok{</p>}
-	\KeywordTok{<blockquote}\OtherTok{ class=}\StringTok{"example"}\OtherTok{ style=}\StringTok{"width: 80%; margin-top: 5px;}
-\StringTok{	  margin-bottom: 5px; position: relative;"}\OtherTok{ data-id=}\StringTok{"block"}\KeywordTok{>}
-		\KeywordTok{<div}\OtherTok{ class=}\StringTok{"fragment fade-down"}\OtherTok{ data-fragment-index=}\StringTok{"2"}
-\OtherTok{			style=}\StringTok{"position: absolute;}
-\StringTok{			  margin-left: auto; margin-right: auto; left: 0; right: 0;"}\KeywordTok{>}
-\NormalTok{			$$ \textbackslash{}text\{approssimata da: \} \textbackslash{} f_N(t)=\textbackslash{}frac\{4\}\{\textbackslash{}pi\} \textbackslash{}left( sin(t) +}
-\NormalTok{			\textbackslash{}frac\{1\}\{3\}sin(3t) +}
-\NormalTok{			\textbackslash{}frac\{1\}\{3\}sin(5t) + ...}
-\NormalTok{			\textbackslash{}right) $$}
-		\KeywordTok{</div>}
-		\KeywordTok{<div}\OtherTok{ class=}\StringTok{"fragment fade-down"}\OtherTok{ data-fragment-index=}\StringTok{"1"}\KeywordTok{>}
-			\KeywordTok{<div}\OtherTok{ class=}\StringTok{"fragment fade-out"}\OtherTok{ data-fragment-index=}\StringTok{"2"}
-\OtherTok{				style=}\StringTok{"position: relative;}
-\StringTok{				margin-left: auto; margin-right: auto; left: 0; right: 0;"}\KeywordTok{>}
-\NormalTok{				$$ \textbackslash{}textit\{Esempio: \} \textbackslash{} f(t) =}
-\NormalTok{				\textbackslash{}begin\{cases\}}
-\NormalTok{				+1, }\ErrorTok{&}\NormalTok{ \textbackslash{}text\{se $ \textbackslash{} 0 \textbackslash{}le t \textbackslash{}lt \textbackslash{}pi $\} \textbackslash{}\textbackslash{}}
-\NormalTok{				-1, }\ErrorTok{&}\NormalTok{ \textbackslash{}text\{se $ \textbackslash{} \textbackslash{}pi \textbackslash{}le t \textbackslash{}lt 2 \textbackslash{}pi $\}}
-\NormalTok{				\textbackslash{}end\{cases\} $$}
-			\KeywordTok{</div>}
-		\KeywordTok{</div>}
-	\KeywordTok{</blockquote>}
+	
+\NormalTok{	...}
+	
 \KeywordTok{</section>}
 \end{Highlighting}
 \end{Shaded}

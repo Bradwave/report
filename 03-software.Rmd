@@ -208,7 +208,7 @@ I **punti** sono quindi **salvati** in un vettore (*path*) e **uniti** per forma
 
 ## Presentazione {#pressoft}
 
-Come già spiegato in un [precedente capitolo](#presentzione), le slide sono state create attraverso il _framework_ per presentazioni HTML [_**Reveal.js**_](https://revealjs.com/), modificato e **personalizzato** per meglio adattarsi alla [visione artistica](#filosofia) generale del progetto. _Reveal.js_ permette di scrivere la presentazione usando il noto linguaggio di _markup_ HTML. Questo approccio offre numerosi vantaggi: la _portabilità_ del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
+Come già spiegato in un [precedente capitolo](#presentazione), le slide sono state create attraverso il _framework_ per presentazioni HTML [_**Reveal.js**_](https://revealjs.com/), modificato e **personalizzato** per meglio adattarsi alla [visione artistica](#filosofia) generale del progetto. _Reveal.js_ permette di scrivere la presentazione usando il noto linguaggio di _markup_ HTML. Questo approccio offre numerosi vantaggi: la _portabilità_ del file su molti dispositivi, la compattezza del file e la possibilità di una semplice diffusione online.<br>
 Inoltre, l'aspetto estetico può essere controllato tramite un [apposito _style sheet_ CSS](https://github.com/Bradwave/thesis/blob/master/dist/theme/math.css) in modo rapido e preciso.
 
 La scelta è ricaduta su questo approccio per la necessità di **integrare fluidamente** le animazioni. _Reveal.js_ consente infatti di visualizzare pagine web sullo sfondo delle slide; ciò mi ha permesso di collegare i file HTML contententi le animazioni.<br>
